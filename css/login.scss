@@ -1,0 +1,291 @@
+$fontPage: 'Gilroy', Verdana, Tahoma, sans-serif;
+$fontColor: #000000;
+$errorColor: #FF7262;
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline; }
+  
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block; }
+
+body {
+    line-height: 1; }
+
+ol, ul {
+    list-style: none; }
+
+blockquote, q {
+    quotes: none; }
+
+blockquote {
+&:before, &:after {
+    content: '';
+    content: none; } }
+
+q {
+&:before, &:after {
+    content: '';
+    content: none; } }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0; }
+* {
+    box-sizing: border-box;
+}
+html,body {
+    height:100%;
+}
+body {
+    font-family: $fontPage;
+    font-style: normal;
+    font-size: 14px;
+}
+.login-page {
+    width: 100%;
+    min-height: 100vh;
+    .header {
+        padding: 70px 90px;
+        height: 170px;
+        .logo {
+            max-width: 110px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .login-content {
+        min-height: calc(100vh - 170px);
+        position: relative;
+        padding-right: 90px;
+        .bold {
+            font-weight: 700;
+        }
+        .img-cont {
+            height:100%;
+            width: 50%;
+            max-width: 800px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            bottom: 0px;
+            overflow: hidden;
+            img {
+                width: 100%;           
+            }
+        }
+        .login-form {
+            padding-left: calc(50% + 50px);
+            .login-header {
+                font-family: $fontPage;
+                font-weight: bold;
+                font-size: 48px;
+                line-height: 58px;
+                color: $fontColor;
+                padding-bottom: 22px;
+            }
+            .under-header {
+                font-family: $fontPage;
+                font-weight: 300;
+                font-size: 18px;
+                line-height: 21px;
+                color: $fontColor;
+                padding-bottom: 40px;
+            }
+            .login-input {
+                padding-bottom: 20px;
+                &.has-error {
+                    input[type=text],
+                    input[type=email],
+                    input[type=tel],
+                    input[type=password] {
+                        border-color: $errorColor;
+                    }
+                }
+                input[type=text],
+                input[type=email],
+                input[type=tel],
+                input[type=password] {
+                    padding: 20px 25px;
+                    background: #FFFFFF;
+                    border: 1px solid #C4C4C4;
+                    border-radius: 15px;
+                    font-family: $fontPage;
+                    font-size: 13px;
+                    line-height: 15px;
+                    color: $fontColor;
+                    outline: none;
+                    width: 100%;
+                    max-width: 345px;
+                    &::placeholder {
+                        font-family: $fontPage;
+                        font-weight: 300;
+                        font-size: 13px;
+                        line-height: 15px;
+                        color: $fontColor;
+                    }
+                }
+            }
+            .btn-cont {
+                padding-bottom: 20px;
+            }
+            .btns-cont {
+                padding-top: 20px;
+            }
+            .btn-submit {
+                width: 100%;
+                max-width: 345px;
+                background: linear-gradient(90deg, #7FA1F8 0%, #B279F7 35%,  #C4C4C4 70%, #C4C4C4 100%);
+                background-size: 300% 100%;
+                background-position: right;
+                border-radius: 15px;
+                font-family: $fontPage;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 22px;
+                color: #000000;
+                padding: 17px;
+                text-align: center;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                transition: all 0.3s ease-in;
+                &:hover {
+                    color: #FFFFFF;
+                    background-position: left;
+                }
+            }
+            .btn-enter-google {
+                background: #FFFFFF;
+                border: 1px solid #C4C4C4;
+                box-sizing: border-box;
+                border-radius: 15px;
+                cursor: pointer;
+                font-family: $fontPage;
+                font-weight: 300;
+                font-size: 13px;
+                line-height: 15px;
+                color: $fontColor;
+                outline: none;
+                padding: 20px;
+                text-align: center;
+                width: 100%;
+                max-width: 345px;
+                span {
+                    padding-left: 55px;
+                    position: relative;
+                    &::before {
+                        content: "";
+                        width: 41px;
+                        height: 41px;
+                        background: url(./../img/logo-google.svg);
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        display: inline-block;
+                        position: absolute;
+                        top: -12px;
+                        left: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 992px) {
+    .login-page {
+        .header {
+            padding: 30px 40px;
+            height: 90px;
+        }
+        .login-content {
+            min-height: calc(100vh - 90px);
+            padding-right: 40px;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .login-page {
+        .header {
+            padding: 30px 30px;
+            height: 70px;
+        }
+        .login-content {
+            min-height: calc(100vh - 70px);
+            padding-right: 30px;
+            padding-left: 30px;
+            .img-cont {
+                display: none;
+            }
+            .login-form {
+                padding-left: 0px;
+                padding-top: 20px;
+                max-width: 350px;
+                margin: auto;
+            }
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    .login-page {
+        .header {
+            .logo {
+                max-width: 80px;
+            }
+        }
+        .login-content {
+            .login-form {
+                .login-header {
+                    font-size: 32px;
+                    line-height: 36px;
+                    padding-bottom: 15px;
+                }
+                .under-header {
+                    padding-bottom: 20px;
+                }
+                .login-input {
+                    padding-bottom: 15px;
+                    input[type=text],
+                    input[type=email],
+                    input[type=tel],
+                    input[type=password] {
+                        padding: 15px 15px;
+                    }
+                }
+                .btns-cont {
+                    padding-top: 10px;
+                }
+                .btn-submit {
+                    padding: 15px;
+                }
+                .btn-enter-google {
+                    padding: 15px;
+                    span {
+                        padding-left: 45px;
+                        &::before {
+                            width: 33px;
+                            height: 33px;
+                            top: -9px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 350px) {
+    .login-page .header {
+        padding: 30px 20px;
+    }
+    .login-page .login-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

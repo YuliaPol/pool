@@ -1,0 +1,364 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none;
+}
+
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.login-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.login-page .header {
+  padding: 70px 90px;
+  height: 170px;
+}
+
+.login-page .header .logo {
+  max-width: 110px;
+}
+
+.login-page .header .logo img {
+  width: 100%;
+}
+
+.login-page .login-content {
+  min-height: calc(100vh - 170px);
+  position: relative;
+  padding-right: 90px;
+}
+
+.login-page .login-content .bold {
+  font-weight: 700;
+}
+
+.login-page .login-content .img-cont {
+  height: 100%;
+  width: 50%;
+  max-width: 800px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  overflow: hidden;
+}
+
+.login-page .login-content .img-cont img {
+  width: 100%;
+}
+
+.login-page .login-content .login-form {
+  padding-left: calc(50% + 50px);
+}
+
+.login-page .login-content .login-form .login-header {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 58px;
+  color: #000000;
+  padding-bottom: 22px;
+}
+
+.login-page .login-content .login-form .under-header {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+  padding-bottom: 40px;
+}
+
+.login-page .login-content .login-form .login-input {
+  padding-bottom: 20px;
+}
+
+.login-page .login-content .login-form .login-input.has-error input[type=text],
+.login-page .login-content .login-form .login-input.has-error input[type=email],
+.login-page .login-content .login-form .login-input.has-error input[type=tel],
+.login-page .login-content .login-form .login-input.has-error input[type=password] {
+  border-color: #FF7262;
+}
+
+.login-page .login-content .login-form .login-input input[type=text],
+.login-page .login-content .login-form .login-input input[type=email],
+.login-page .login-content .login-form .login-input input[type=tel],
+.login-page .login-content .login-form .login-input input[type=password] {
+  padding: 20px 25px;
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  border-radius: 15px;
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+  outline: none;
+  width: 100%;
+  max-width: 345px;
+}
+
+.login-page .login-content .login-form .login-input input[type=text]::-webkit-input-placeholder,
+.login-page .login-content .login-form .login-input input[type=email]::-webkit-input-placeholder,
+.login-page .login-content .login-form .login-input input[type=tel]::-webkit-input-placeholder,
+.login-page .login-content .login-form .login-input input[type=password]::-webkit-input-placeholder {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+}
+
+.login-page .login-content .login-form .login-input input[type=text]::-moz-placeholder,
+.login-page .login-content .login-form .login-input input[type=email]::-moz-placeholder,
+.login-page .login-content .login-form .login-input input[type=tel]::-moz-placeholder,
+.login-page .login-content .login-form .login-input input[type=password]::-moz-placeholder {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+}
+
+.login-page .login-content .login-form .login-input input[type=text]:-ms-input-placeholder,
+.login-page .login-content .login-form .login-input input[type=email]:-ms-input-placeholder,
+.login-page .login-content .login-form .login-input input[type=tel]:-ms-input-placeholder,
+.login-page .login-content .login-form .login-input input[type=password]:-ms-input-placeholder {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+}
+
+.login-page .login-content .login-form .login-input input[type=text]::-ms-input-placeholder,
+.login-page .login-content .login-form .login-input input[type=email]::-ms-input-placeholder,
+.login-page .login-content .login-form .login-input input[type=tel]::-ms-input-placeholder,
+.login-page .login-content .login-form .login-input input[type=password]::-ms-input-placeholder {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+}
+
+.login-page .login-content .login-form .login-input input[type=text]::placeholder,
+.login-page .login-content .login-form .login-input input[type=email]::placeholder,
+.login-page .login-content .login-form .login-input input[type=tel]::placeholder,
+.login-page .login-content .login-form .login-input input[type=password]::placeholder {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+}
+
+.login-page .login-content .login-form .btn-cont {
+  padding-bottom: 20px;
+}
+
+.login-page .login-content .login-form .btns-cont {
+  padding-top: 20px;
+}
+
+.login-page .login-content .login-form .btn-submit {
+  width: 100%;
+  max-width: 345px;
+  background: -webkit-gradient(linear, left top, right top, from(#7FA1F8), color-stop(35%, #B279F7), color-stop(70%, #C4C4C4), to(#C4C4C4));
+  background: -webkit-linear-gradient(left, #7FA1F8 0%, #B279F7 35%, #C4C4C4 70%, #C4C4C4 100%);
+  background: -o-linear-gradient(left, #7FA1F8 0%, #B279F7 35%, #C4C4C4 70%, #C4C4C4 100%);
+  background: linear-gradient(90deg, #7FA1F8 0%, #B279F7 35%, #C4C4C4 70%, #C4C4C4 100%);
+  -webkit-background-size: 300% 100%;
+          background-size: 300% 100%;
+  background-position: right;
+  border-radius: 15px;
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  padding: 17px;
+  text-align: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.login-page .login-content .login-form .btn-submit:hover {
+  color: #FFFFFF;
+  background-position: left;
+}
+
+.login-page .login-content .login-form .btn-enter-google {
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+  outline: none;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 345px;
+}
+
+.login-page .login-content .login-form .btn-enter-google span {
+  padding-left: 55px;
+  position: relative;
+}
+
+.login-page .login-content .login-form .btn-enter-google span::before {
+  content: "";
+  width: 41px;
+  height: 41px;
+  background: url(./../img/logo-google.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  display: inline-block;
+  position: absolute;
+  top: -12px;
+  left: 0px;
+}
+
+@media screen and (max-width: 992px) {
+  .login-page .header {
+    padding: 30px 40px;
+    height: 90px;
+  }
+  .login-page .login-content {
+    min-height: calc(100vh - 90px);
+    padding-right: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login-page .header {
+    padding: 30px 30px;
+    height: 70px;
+  }
+  .login-page .login-content {
+    min-height: calc(100vh - 70px);
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  .login-page .login-content .img-cont {
+    display: none;
+  }
+  .login-page .login-content .login-form {
+    padding-left: 0px;
+    padding-top: 20px;
+    max-width: 350px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .login-page .header .logo {
+    max-width: 80px;
+  }
+  .login-page .login-content .login-form .login-header {
+    font-size: 32px;
+    line-height: 36px;
+    padding-bottom: 15px;
+  }
+  .login-page .login-content .login-form .under-header {
+    padding-bottom: 20px;
+  }
+  .login-page .login-content .login-form .login-input {
+    padding-bottom: 15px;
+  }
+  .login-page .login-content .login-form .login-input input[type=text],
+  .login-page .login-content .login-form .login-input input[type=email],
+  .login-page .login-content .login-form .login-input input[type=tel],
+  .login-page .login-content .login-form .login-input input[type=password] {
+    padding: 15px 15px;
+  }
+  .login-page .login-content .login-form .btns-cont {
+    padding-top: 10px;
+  }
+  .login-page .login-content .login-form .btn-submit {
+    padding: 15px;
+  }
+  .login-page .login-content .login-form .btn-enter-google {
+    padding: 15px;
+  }
+  .login-page .login-content .login-form .btn-enter-google span {
+    padding-left: 45px;
+  }
+  .login-page .login-content .login-form .btn-enter-google span::before {
+    width: 33px;
+    height: 33px;
+    top: -9px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .login-page .header {
+    padding: 30px 20px;
+  }
+  .login-page .login-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+/*# sourceMappingURL=login.css.map */
