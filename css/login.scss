@@ -77,8 +77,29 @@ body {
             left: 0px;
             bottom: 0px;
             overflow: hidden;
+            text-align: center;
             img {
-                width: 100%;           
+                max-width: 100%;           
+            }
+        }
+        .detail-form-text-cont {
+            position: relative;
+            max-width: 345px;
+            .detail-form-text {
+                position: absolute;
+                left: calc(100% + 20px);
+                top: 20px;
+                background: #FFFFFF;
+                box-shadow: 1px 1px 4px 5px rgba(0, 0, 0, 0.03);
+                border-radius: 25px;
+                padding: 25px;
+                font-family: $fontPage;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 17px;
+                color: $fontColor;
+                width: 215px;
             }
         }
         .login-form,
@@ -91,6 +112,14 @@ body {
                 line-height: 54px;
                 color: $fontColor;
                 padding-bottom: 22px;
+            }
+            .login-header-2 {
+                font-family: $fontPage;
+                font-weight: 300;
+                font-size: 24px;
+                line-height: 27px;
+                color: $fontColor;
+                padding-bottom: 20px;
             }
             .under-header {
                 font-family: $fontPage;
@@ -195,7 +224,7 @@ body {
                 padding-bottom: 20px;
             }
             .btns-cont {
-                padding-top: 40px;
+                padding-top: 30px;
             }
             .btn-submit {
                 width: 100%;
@@ -215,10 +244,31 @@ body {
                 outline: none;
                 cursor: pointer;
                 transition: all 0.3s ease-in;
+                text-decoration: none;
+                display: block;
                 &:hover {
                     color: #FFFFFF;
                     background-position: left;
                 }
+            }
+            .btn-white {
+                background: #FFFFFF;
+                border: 1px solid #C4C4C4;
+                box-sizing: border-box;
+                border-radius: 15px;
+                cursor: pointer;
+                font-family: $fontPage;
+                font-weight: 300;
+                font-size: 13px;
+                line-height: 15px;
+                color: $fontColor;
+                outline: none;
+                padding: 20px;
+                text-align: center;
+                width: 100%;
+                max-width: 345px;
+                text-decoration: none;
+                display: block;
             }
             .btn-enter-google {
                 background: #FFFFFF;
@@ -236,6 +286,8 @@ body {
                 text-align: center;
                 width: 100%;
                 max-width: 345px;
+                text-decoration: none;
+                display: block;
                 span {
                     padding-left: 55px;
                     position: relative;
@@ -253,6 +305,16 @@ body {
                         left: 0px;
                     }
                 }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1250px) {
+    .login-page .login-content {
+        .detail-form-text-cont  {
+            .detail-form-text {
+                position: initial;
+                width: auto;
             }
         }
     }
