@@ -72,6 +72,78 @@ body {
   width: 100%;
 }
 
+.login-page .login-header {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 54px;
+  color: #000000;
+  padding-bottom: 22px;
+}
+
+.login-page .login-header-2 {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 27px;
+  color: #000000;
+  padding-bottom: 20px;
+}
+
+.login-page .btn-submit {
+  width: 100%;
+  max-width: 345px;
+  background: -webkit-gradient(linear, left top, right top, from(#7FA1F8), color-stop(35%, #B279F7), color-stop(70%, #C4C4C4), to(#C4C4C4));
+  background: -webkit-linear-gradient(left, #7FA1F8 0%, #B279F7 35%, #C4C4C4 70%, #C4C4C4 100%);
+  background: -o-linear-gradient(left, #7FA1F8 0%, #B279F7 35%, #C4C4C4 70%, #C4C4C4 100%);
+  background: linear-gradient(90deg, #7FA1F8 0%, #B279F7 35%, #C4C4C4 70%, #C4C4C4 100%);
+  -webkit-background-size: 300% 100%;
+          background-size: 300% 100%;
+  background-position: right;
+  border-radius: 15px;
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  padding: 17px;
+  text-align: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  text-decoration: none;
+  display: block;
+}
+
+.login-page .btn-submit:hover {
+  color: #FFFFFF;
+  background-position: left;
+}
+
+.login-page .btn-white {
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+  outline: none;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 345px;
+  text-decoration: none;
+  display: block;
+}
+
 .login-page .login-content {
   min-height: calc(100vh - 120px);
   position: relative;
@@ -124,26 +196,6 @@ body {
 .login-page .login-content .login-form,
 .login-page .login-content .agreement-form {
   padding-left: calc(50% + 50px);
-}
-
-.login-page .login-content .login-form .login-header,
-.login-page .login-content .agreement-form .login-header {
-  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
-  font-weight: bold;
-  font-size: 44px;
-  line-height: 54px;
-  color: #000000;
-  padding-bottom: 22px;
-}
-
-.login-page .login-content .login-form .login-header-2,
-.login-page .login-content .agreement-form .login-header-2 {
-  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
-  font-weight: 300;
-  font-size: 24px;
-  line-height: 27px;
-  color: #000000;
-  padding-bottom: 20px;
 }
 
 .login-page .login-content .login-form .under-header,
@@ -358,63 +410,6 @@ body {
   padding-top: 30px;
 }
 
-.login-page .login-content .login-form .btn-submit,
-.login-page .login-content .agreement-form .btn-submit {
-  width: 100%;
-  max-width: 345px;
-  background: -webkit-gradient(linear, left top, right top, from(#7FA1F8), color-stop(35%, #B279F7), color-stop(70%, #C4C4C4), to(#C4C4C4));
-  background: -webkit-linear-gradient(left, #7FA1F8 0%, #B279F7 35%, #C4C4C4 70%, #C4C4C4 100%);
-  background: -o-linear-gradient(left, #7FA1F8 0%, #B279F7 35%, #C4C4C4 70%, #C4C4C4 100%);
-  background: linear-gradient(90deg, #7FA1F8 0%, #B279F7 35%, #C4C4C4 70%, #C4C4C4 100%);
-  -webkit-background-size: 300% 100%;
-          background-size: 300% 100%;
-  background-position: right;
-  border-radius: 15px;
-  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 22px;
-  color: #000000;
-  padding: 17px;
-  text-align: center;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
-  text-decoration: none;
-  display: block;
-}
-
-.login-page .login-content .login-form .btn-submit:hover,
-.login-page .login-content .agreement-form .btn-submit:hover {
-  color: #FFFFFF;
-  background-position: left;
-}
-
-.login-page .login-content .login-form .btn-white,
-.login-page .login-content .agreement-form .btn-white {
-  background: #FFFFFF;
-  border: 1px solid #C4C4C4;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-radius: 15px;
-  cursor: pointer;
-  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
-  font-weight: 300;
-  font-size: 13px;
-  line-height: 15px;
-  color: #000000;
-  outline: none;
-  padding: 20px;
-  text-align: center;
-  width: 100%;
-  max-width: 345px;
-  text-decoration: none;
-  display: block;
-}
-
 .login-page .login-content .login-form .btn-enter-google,
 .login-page .login-content .agreement-form .btn-enter-google {
   background: #FFFFFF;
@@ -459,6 +454,180 @@ body {
   left: 0px;
 }
 
+.login-page .interests-content {
+  text-align: center;
+  padding-top: 30px;
+  padding-left: 90px;
+  padding-right: 90px;
+  padding-bottom: 30px;
+}
+
+.login-page .interests-content .login-header {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 54px;
+  color: #000000;
+  padding-bottom: 22px;
+}
+
+.login-page .interests-content .login-header-2 {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 27px;
+  color: #000000;
+  padding-bottom: 20px;
+}
+
+.login-page .interests-content .interests-list {
+  max-width: 960px;
+  padding-top: 80px;
+  margin: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.login-page .interests-content .interests-list .interest-item {
+  width: 25%;
+  padding-bottom: 20px;
+}
+
+.login-page .interests-content .interests-list .interest-item input[type=checkbox] {
+  display: none;
+}
+
+.login-page .interests-content .interests-list .interest-item input[type=checkbox]:checked ~ label {
+  background: #7FA1F8;
+}
+
+.login-page .interests-content .interests-list .interest-item input[type=checkbox]:checked ~ label .icon {
+  background: -webkit-gradient(linear, left top, right top, from(#B279F7), to(#7FA1F8));
+  background: -webkit-linear-gradient(left, #B279F7 0%, #7FA1F8 100%);
+  background: -o-linear-gradient(left, #B279F7 0%, #7FA1F8 100%);
+  background: linear-gradient(90deg, #B279F7 0%, #7FA1F8 100%);
+}
+
+.login-page .interests-content .interests-list .interest-item label,
+.login-page .interests-content .interests-list .interest-item .item-label {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: calc(100% - 10px);
+  background: #E5E5E5;
+  border-radius: 30px;
+  padding: 10px 15px;
+  -webkit-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.login-page .interests-content .interests-list .interest-item label:hover::before,
+.login-page .interests-content .interests-list .interest-item .item-label:hover::before {
+  opacity: 1;
+}
+
+.login-page .interests-content .interests-list .interest-item label::before,
+.login-page .interests-content .interests-list .interest-item .item-label::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: -webkit-gradient(linear, left top, right top, from(#B279F7), to(#7FA1F8));
+  background: -webkit-linear-gradient(left, #B279F7 0%, #7FA1F8 100%);
+  background: -o-linear-gradient(left, #B279F7 0%, #7FA1F8 100%);
+  background: linear-gradient(90deg, #B279F7 0%, #7FA1F8 100%);
+  margin: -1px;
+  z-index: -1;
+  border-radius: 30px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in;
+  -o-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+}
+
+.login-page .interests-content .interests-list .interest-item label .icon,
+.login-page .interests-content .interests-list .interest-item .item-label .icon {
+  width: 39px;
+  height: 39px;
+  background: #C4C4C4;
+  border-radius: 50%;
+  position: relative;
+}
+
+.login-page .interests-content .interests-list .interest-item label .icon::before,
+.login-page .interests-content .interests-list .interest-item .item-label .icon::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  right: 7px;
+  bottom: 7px;
+  background: url(./../img/icon-hashtag.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+}
+
+.login-page .interests-content .interests-list .interest-item label .name,
+.login-page .interests-content .interests-list .interest-item .item-label .name {
+  text-align: center;
+  width: calc(100% - 40px);
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  padding-right: 30px;
+}
+
+.login-page .interests-content .btn-cont {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 50px;
+}
+
+.login-page .hidden {
+  display: none !important;
+}
+
 .datepicker.dropdown-menu th,
 .datepicker.datepicker-inline th,
 .datepicker.dropdown-menu td,
@@ -491,6 +660,17 @@ body {
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .login-page .header {
+    padding: 30px 50px;
+    height: 90px;
+  }
+  .login-page .interests-content {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .login-page .header {
     padding: 30px 40px;
@@ -500,12 +680,37 @@ body {
     min-height: calc(100vh - 90px);
     padding-right: 40px;
   }
+  .login-page .interests-content {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .login-page .interests-content .interests-list .interest-item {
+    width: 33.3%;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .login-page .header {
     padding: 30px 30px;
     height: 70px;
+  }
+  .login-page .interests-content {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .login-page .interests-content .interests-list {
+    padding-top: 50px;
+  }
+  .login-page .interests-content .interests-list .interest-item {
+    width: 50%;
+  }
+  .login-page .interests-content .login-header {
+    font-size: 32px;
+    line-height: 38px;
+  }
+  .login-page .interests-content .login-header-2 {
+    font-size: 22px;
+    line-height: 26px;
   }
   .login-page .login-content {
     min-height: calc(100vh - 70px);
@@ -536,6 +741,39 @@ body {
 @media screen and (max-width: 500px) {
   .login-page .header .logo {
     max-width: 80px;
+  }
+  .login-page .btn-submit {
+    padding: 15px;
+    max-width: 100%;
+  }
+  .login-page .interests-content .login-header {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .login-page .interests-content .login-header-2 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .login-page .interests-content .interests-list {
+    padding-top: 40px;
+  }
+  .login-page .interests-content .interests-list .interest-item {
+    width: 50%;
+  }
+  .login-page .interests-content .interests-list .interest-item label,
+  .login-page .interests-content .interests-list .interest-item .item-label {
+    padding: 10px;
+  }
+  .login-page .interests-content .interests-list .interest-item label .icon,
+  .login-page .interests-content .interests-list .interest-item .item-label .icon {
+    width: 30px;
+    height: 30px;
+  }
+  .login-page .interests-content .interests-list .interest-item label .name,
+  .login-page .interests-content .interests-list .interest-item .item-label .name {
+    font-size: 14px;
+    line-height: 18px;
+    padding-right: 0px;
   }
   .login-page .login-content .login-form,
   .login-page .login-content .agreement-form {
@@ -570,11 +808,6 @@ body {
   .login-page .login-content .agreement-form .btns-cont {
     padding-top: 20px;
   }
-  .login-page .login-content .login-form .btn-submit,
-  .login-page .login-content .agreement-form .btn-submit {
-    padding: 15px;
-    max-width: 100%;
-  }
   .login-page .login-content .login-form .btn-enter-google,
   .login-page .login-content .agreement-form .btn-enter-google {
     padding: 15px;
@@ -592,11 +825,29 @@ body {
   }
 }
 
+@media screen and (max-width: 400px) {
+  .login-page .interests-content .login-header {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .login-page .interests-content .login-header-2 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .login-page .interests-content .interests-list {
+    padding-top: 40px;
+  }
+  .login-page .interests-content .interests-list .interest-item {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 350px) {
   .login-page .header {
     padding: 30px 20px;
   }
-  .login-page .login-content {
+  .login-page .login-content,
+  .login-page .interests-content {
     padding-left: 20px;
     padding-right: 20px;
   }

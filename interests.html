@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="./font/Gilroy/stylesheet.css">
+    <link rel="stylesheet" href="./css/login.css">
+
+    <script src="./js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div class="login-page">
+        <div class="header">
+            <div class="logo">
+                <img src="./img/logo-pool.svg" alt="Pool">
+            </div>
+        </div>
+        <div class="interests-content">
+            <div class="login-header">
+                Давайте определим, что вам нравится
+            </div>
+            <div class="login-header-2">
+                Чтобы мы знали, какие темы опросов предлагать
+            </div>
+            <form action="./interests_monthly.html">
+                <div class="interests-list">
+                    <div class="interest-item">
+                        <input type="checkbox" name="q-1" id="q-1" value="Путешествия">
+                        <label for="q-1">
+                            <div class="icon"></div>
+                            <div class="name">
+                                Путешествия
+                            </div>
+                        </label>
+                    </div>
+                    <div class="interest-item">
+                        <input type="checkbox" name="q-2" id="q-2" value="Медицина">
+                        <label for="q-2">
+                            <div class="icon"></div>
+                            <div class="name">
+                                Медицина
+                            </div>
+                        </label>
+                    </div>
+                    <div class="interest-item">
+                        <input type="checkbox" name="q-3" id="q-3" value="Животные">
+                        <label for="q-3">
+                            <div class="icon"></div>
+                            <div class="name">
+                                Животные
+                            </div>
+                        </label>
+                    </div>
+                    <div class="interest-item">
+                        <input type="checkbox" name="q-4" id="q-4" value="Кино">
+                        <label for="q-4">
+                            <div class="icon"></div>
+                            <div class="name">
+                                Кино
+                            </div>
+                        </label>
+                    </div>
+                    <div class="interest-item">
+                        <input type="checkbox" name="q-5" id="q-5" value="Дети">
+                        <label for="q-5">
+                            <div class="icon"></div>
+                            <div class="name">
+                                Дети
+                            </div>
+                        </label>
+                    </div>
+                    <div class="interest-item">
+                        <input type="checkbox" name="q-6" id="q-6" value="Красота">
+                        <label for="q-6">
+                            <div class="icon"></div>
+                            <div class="name">
+                                Красота
+                            </div>
+                        </label>
+                    </div>
+                    <div class="interest-item">
+                        <input type="checkbox" name="q-7" id="q-7" value="Досуг">
+                        <label for="q-7">
+                            <div class="icon"></div>
+                            <div class="name">
+                                Досуг
+                            </div>
+                        </label>
+                    </div>
+                    <div class="interest-item">
+                        <input type="checkbox" name="q-8" id="q-8" value="Еда">
+                        <label for="q-8">
+                            <div class="icon"></div>
+                            <div class="name">
+                                Еда
+                            </div>
+                        </label>
+                    </div>
+                    <div class="interest-item show-more">
+                        <div class="item-label">
+                            <div class="icon"></div>
+                            <div class="name">
+                                Еще
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btns-cont">
+                    <div class="btn-cont">
+                        <button type="submit" class="btn-submit">
+                            Начать
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="./js/login.js"></script>
+    <script>
+        let moreInterests = [
+            {
+                name: "Столовые",
+                id: 9,
+            },
+            {
+                name: "Кофейни",
+                id: 10,
+            },
+            {
+                name: "Рестораны",
+                id: 11,
+            },
+            {
+                name: "Кафе",
+                id: 12,
+            },
+            {
+                name: "Дети",
+                id: 13,
+            },
+            {
+                name: "Красота",
+                id: 14,
+            },
+            {
+                name: "Еда",
+                id: 15,
+            },
+            {
+                name: "Медицина",
+                id: 16,
+            },
+        ];
+        $('.show-more').click(function(e){
+            let addHtml = ""
+            let i;
+            for (i = 0; i < moreInterests.length; i++) {
+                if(i === 8) {
+                    break;
+                }
+                addHtml += 
+                '<div class="interest-item">'
+                +'    <input type="checkbox" name="q-' + moreInterests[i].id + '" id="q-' + moreInterests[i].id + '" value="' + moreInterests[i].name + '">'
+                +'  <label for="q-' + moreInterests[i].id + '">'
+                +'        <div class="icon"></div>'
+                +'       <div class="name">'
+                + moreInterests[i].name
+                +'        </div>'
+                +'    </label>'
+                +'</div>';
+            }
+            moreInterests.splice(0,i);
+            $(addHtml).insertBefore($(this));
+            if(moreInterests.length === 0){
+                $(this).fadeOut(0);
+            }
+        });
+    </script>
+</body>
+</html>
