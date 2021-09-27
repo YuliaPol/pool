@@ -1,6 +1,9 @@
 $fontPage: 'Gilroy', Verdana, Tahoma, sans-serif;
 $fontColor: #000000;
 $errorColor: #FF7262;
+$linearBackground: linear-gradient(90deg, #B279F7 0%, #7FA1F8 100%);
+$bgColor1: #B279F7;
+$bgColor2: #7FA1F8;
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
@@ -229,7 +232,7 @@ body {
             .btn-submit {
                 width: 100%;
                 max-width: 345px;
-                background: linear-gradient(90deg, #7FA1F8 0%, #B279F7 35%,  #C4C4C4 70%, #C4C4C4 100%);
+                background: linear-gradient(90deg, $bgColor2 0%, $bgColor1 35%,  #C4C4C4 70%, #C4C4C4 100%);
                 background-size: 300% 100%;
                 background-position: right;
                 border-radius: 15px;
@@ -308,6 +311,26 @@ body {
             }
         }
     }
+}
+.datepicker.dropdown-menu th,
+.datepicker.datepicker-inline th,
+.datepicker.dropdown-menu td,
+.datepicker.datepicker-inline td {
+    padding: 5px;
+}
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active:hover:active,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active:hover.active,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active.disabled:hover.active,
+.datepicker table tr td.active:active,
+.datepicker table tr td.active.highlighted:active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.highlighted.active {
+    background: $linearBackground;
 }
 @media screen and (max-width: 1250px) {
     .login-page .login-content {

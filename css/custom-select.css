@@ -139,7 +139,7 @@
 }
 
 .customselect-wrapper .select-options li.active {
-  background: #E5E5E5;
+  background: #eeeeee;
 }
 
 .customselect-wrapper .select-options li[rel="hide"] {

@@ -459,6 +459,31 @@ body {
   left: 0px;
 }
 
+.datepicker.dropdown-menu th,
+.datepicker.datepicker-inline th,
+.datepicker.dropdown-menu td,
+.datepicker.datepicker-inline td {
+  padding: 5px;
+}
+
+.datepicker table tr td span.active:active,
+.datepicker table tr td span.active:hover:active,
+.datepicker table tr td span.active.disabled:active,
+.datepicker table tr td span.active.disabled:hover:active,
+.datepicker table tr td span.active.active,
+.datepicker table tr td span.active:hover.active,
+.datepicker table tr td span.active.disabled.active,
+.datepicker table tr td span.active.disabled:hover.active,
+.datepicker table tr td.active:active,
+.datepicker table tr td.active.highlighted:active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.highlighted.active {
+  background: -webkit-gradient(linear, left top, right top, from(#B279F7), to(#7FA1F8));
+  background: -webkit-linear-gradient(left, #B279F7 0%, #7FA1F8 100%);
+  background: -o-linear-gradient(left, #B279F7 0%, #7FA1F8 100%);
+  background: linear-gradient(90deg, #B279F7 0%, #7FA1F8 100%);
+}
+
 @media screen and (max-width: 1250px) {
   .login-page .login-content .detail-form-text-cont .detail-form-text {
     position: initial;

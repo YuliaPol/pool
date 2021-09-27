@@ -1,5 +1,15 @@
 jQuery(function ($) {
     $(document).ready(function () {
+        //set plugins for date
+        $('.date-picker').datepicker({
+            language: "ru",
+            startView: 2,
+        });
+        $('.date-picker').inputmask({
+            alias: "datetime",
+            inputFormat: "dd.mm.yyyy",
+            placeholder: "00.00.0000"
+        });
         let loginForm = $('.send-form').find('form');
         loginForm.submit(function (e) {
             var erroreArrayElemnts = [];
