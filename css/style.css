@@ -852,13 +852,10 @@ body {
     width: 120px;
   }
   .page-cont .left-side .main-panel {
-    height: 100vh;
-    /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100);
-    height: -webkit-fill-available;
+    height: auto;
+    min-height: initial;
     width: 120px;
     border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
   }
   .page-cont .right-side {
     height: 100vh;
