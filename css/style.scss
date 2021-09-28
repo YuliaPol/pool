@@ -628,6 +628,7 @@ $color-stack:
                 height: 100vh; /* Fallback for browsers that do not support Custom Properties */
                 height: calc(var(--vh, 1vh) * 100);
                 height: -webkit-fill-available;
+                min-height: initial;
                 width: 120px;
                 border-top-left-radius: 0px;
                 // border-bottom-left-radius: 0px;
