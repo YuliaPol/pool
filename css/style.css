@@ -914,28 +914,13 @@ body {
     -webkit-transition: left 0.3s ease-in;
     -o-transition: left 0.3s ease-in;
     transition: left 0.3s ease-in;
-    width: 100px;
+    width: 200px;
   }
   .page-cont .left-side .main-panel.open {
     left: 0px;
   }
   .page-cont .left-side .logo {
     padding-top: 30px;
-  }
-  .page-cont .left-side .left-menu {
-    padding: 10px;
-    padding-top: 25px;
-  }
-  .page-cont .left-side .left-menu .menu-item a {
-    padding: 10px 5px;
-  }
-  .page-cont .left-side .faq-block {
-    padding: 15px 5px;
-  }
-  .page-cont .left-side .faq-block .faq-header {
-    font-size: 11px;
-    line-height: 14px;
-    padding-bottom: 5px;
   }
   .page-cont .right-side {
     width: 100%;

@@ -692,28 +692,13 @@ $color-stack:
                 position: fixed;
                 left: -150px;
                 transition: left 0.3s ease-in;
-                width: 100px;
+                width: 200px;
                 &.open {
                     left: 0px;
                 }
             }
             .logo {
                 padding-top: 30px;
-            }
-            .left-menu {
-                padding: 10px;
-                padding-top: 25px;
-                .menu-item a {
-                    padding: 10px 5px;
-                }
-            }
-            .faq-block {
-                padding: 15px 5px;
-                .faq-header {
-                    font-size: 11px;
-                    line-height: 14px;
-                    padding-bottom: 5px;
-                }
             }
         }
         .right-side {
