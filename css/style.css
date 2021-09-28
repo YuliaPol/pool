@@ -390,6 +390,10 @@ body {
   width: 100%;
 }
 
+.page-cont .right-side .top-menu ul li a.orange {
+  color: #FF7262;
+}
+
 .page-cont .right-side .page-content {
   min-height: calc(100% - 60px);
   display: -webkit-box;
@@ -498,6 +502,139 @@ body {
           background-size: contain;
   display: block;
   cursor: pointer;
+  position: relative;
+}
+
+.page-cont .right-side .page-content .pool-list .pool-item .show-pool:hover .tooltips {
+  opacity: 1;
+}
+
+.page-cont .right-side .page-content .pool-list .pool-item .show-pool.inactive {
+  background: url(./../img/play-pool-inactive.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+}
+
+.page-cont .right-side .page-content .pool-list .pool-item .show-pool .tooltips {
+  position: absolute;
+  bottom: 20px;
+  left: 5px;
+  width: 215px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 1px 1px 4px 5px rgba(0, 0, 0, 0.03);
+          box-shadow: 1px 1px 4px 5px rgba(0, 0, 0, 0.03);
+  border-radius: 25px;
+  padding: 25px;
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 16px;
+  color: #000000;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in;
+  -o-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+}
+
+.page-cont .right-side .page-content .data-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.page-cont .right-side .page-content .data-list .data-block {
+  background: #F5F5F7;
+  border-radius: 25px;
+  padding: 20px 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.page-cont .right-side .page-content .data-list .data-block.width30 {
+  width: calc(30% - 10px);
+}
+
+.page-cont .right-side .page-content .data-list .data-block.width70 {
+  width: calc(70% - 10px);
+}
+
+.page-cont .right-side .page-content .data-list .data-block .flex-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  width: 100%;
+}
+
+.page-cont .right-side .page-content .data-list .data-block .data-item {
+  padding-bottom: 20px;
+}
+
+.page-cont .right-side .page-content .data-list .data-block .data-item.width50 {
+  width: calc(50% - 10px);
+}
+
+.page-cont .right-side .page-content .data-list .data-block .data-item.width100 {
+  width: 100%;
+}
+
+.page-cont .right-side .page-content .data-list .data-block .data-item .label {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 16px;
+  color: #000000;
+  padding-bottom: 10px;
+}
+
+.page-cont .right-side .page-content .data-list .data-block .data-item .value {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 13px;
+  color: #000000;
 }
 
 .page-cont .right-side .page-content .right-block {
@@ -639,6 +776,17 @@ body {
 
 .apexcharts-canvas .tooltips-line {
   position: absolute;
+  opacity: 0;
+  -webkit-transition-delay: 0.2s;
+       -o-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+  -webkit-transition-duration: 0.3s;
+       -o-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.apexcharts-canvas .tooltips-line.shown, .apexcharts-canvas .tooltips-line:hover {
+  opacity: 1;
 }
 
 .apexcharts-canvas .tooltips-line .tooltip-content {
@@ -852,7 +1000,6 @@ body {
     width: 120px;
   }
   .page-cont .left-side .main-panel {
-    min-height: 100vh;
     height: 100vh;
     /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
@@ -860,6 +1007,7 @@ body {
     min-height: initial;
     width: 120px;
     border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
   }
   .page-cont .right-side {
     height: 100vh;
@@ -940,6 +1088,9 @@ body {
   .page-cont .right-side .page-content {
     padding-top: 80px;
   }
+  .page-cont .right-side .page-content .data-list .data-block {
+    padding: 20px;
+  }
   .mobile-menu {
     display: -webkit-box;
     display: -webkit-flex;
@@ -965,6 +1116,15 @@ body {
   .page-cont .right-side .page-content .right-block {
     width: 100%;
     padding: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page-cont .right-side .page-content .data-list .data-block {
+    width: 100%;
+  }
+  .page-cont .right-side .page-content .data-list .data-block.width30, .page-cont .right-side .page-content .data-list .data-block.width70 {
+    width: 100%;
   }
 }
 
@@ -995,6 +1155,12 @@ body {
   .page-cont .right-side .page-content .pool-list .pool-item {
     width: 100%;
     margin-bottom: 15px;
+  }
+  .page-cont .right-side .page-content .data-list .data-block .data-item {
+    width: 100%;
+  }
+  .page-cont .right-side .page-content .data-list .data-block .data-item.width50 {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */

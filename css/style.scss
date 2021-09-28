@@ -290,6 +290,9 @@ body {
                                 width: 100%;
                             }
                         }
+                        &.orange {
+                            color: #FF7262;
+                        }
                     }
                 }
             }
@@ -354,6 +357,91 @@ body {
                         background-size: contain;
                         display: block;
                         cursor: pointer;
+                        position: relative;
+                        &:hover {
+                            .tooltips {
+                                opacity: 1;
+                            }
+                        }
+                        &.inactive {
+                            background: url(./../img/play-pool-inactive.svg);
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                        }
+                        .tooltips {
+                            position: absolute;
+                            bottom: 20px;
+                            left: 5px;
+                            width: 215px;
+                            background: #FFFFFF;
+                            box-shadow: 1px 1px 4px 5px rgba(0, 0, 0, 0.03);
+                            border-radius: 25px;
+                            padding: 25px;
+                            font-family: $fontPage;
+                            font-weight: bold;
+                            font-size: 13px;
+                            line-height: 16px;
+                            color: #000000;
+                            pointer-events: none;
+                            opacity: 0;
+                            transition: opacity 0.3s ease-in;
+                        }
+                    }
+                }
+            }
+            .data-list {
+                display: flex;
+                align-items: stretch;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                .data-block {
+                    background: #F5F5F7;
+                    border-radius: 25px;
+                    padding: 20px 40px;
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    margin-bottom: 20px;
+                    &.width30 {
+                        width: calc(30% - 10px);
+                    }
+                    &.width70 {
+                        width: calc(70% - 10px);
+                    }
+                    .flex-row {
+                        display: flex;
+                        align-items: stretch;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                        width: 100%;
+                    }
+                    .data-item  {
+                        padding-bottom: 20px;
+                        &.width50 {
+                            width: calc(50% - 10px);
+                        }
+                        &.width100 {
+                            width: 100%;
+                        }
+                        .label {
+                            font-family: $fontPage;
+                            font-style: normal;
+                            font-weight: bold;
+                            font-size: 13px;
+                            line-height: 16px;
+                            color: #000000;
+                            padding-bottom: 10px;
+                        }
+                        .value {
+                            font-family: $fontPage;
+                            font-style: normal;
+                            font-weight: 300;
+                            font-size: 11px;
+                            line-height: 13px;
+                            color: #000000;
+                        }
                     }
                 }
             }
@@ -470,6 +558,13 @@ body {
     }
     .tooltips-line {
         position: absolute;
+        opacity: 0;
+        transition-delay: 0.2s;
+        transition-duration: 0.3s;
+        &.shown,
+        &:hover {
+            opacity: 1;
+        }
         .tooltip-content {
             position: absolute;
             top: -20px;
@@ -624,14 +719,13 @@ $color-stack:
             min-height: 100vh;
             width: 120px;
             .main-panel {
-                min-height: 100vh;
                 height: 100vh; /* Fallback for browsers that do not support Custom Properties */
                 height: calc(var(--vh, 1vh) * 100);
                 height: -webkit-fill-available;
                 min-height: initial;
                 width: 120px;
                 border-top-left-radius: 0px;
-                // border-bottom-left-radius: 0px;
+                border-bottom-left-radius: 0px;
             }
         }
         .right-side {
@@ -712,6 +806,11 @@ $color-stack:
             }
             .page-content {
                 padding-top: 80px;
+                .data-list {
+                    .data-block {
+                        padding: 20px;
+                    }
+                }
             }
         }
     }
@@ -732,6 +831,23 @@ $color-stack:
         .right-block {
             width: 100%;
             padding: 20px;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .page-cont {
+        .right-side {
+            .page-content {
+                .data-list {
+                    .data-block {
+                        width: 100%;
+                        &.width30,
+                        &.width70 {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -766,6 +882,22 @@ $color-stack:
         .page-content .pool-list .pool-item {
             width: 100%;
             margin-bottom: 15px;
+        }
+    }
+    .page-cont {
+        .right-side {
+            .page-content {
+                .data-list {
+                    .data-block {
+                        .data-item {
+                            width: 100%;
+                            &.width50 {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
