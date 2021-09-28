@@ -855,6 +855,7 @@ body {
     height: 100vh;
     /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
+    height: -webkit-fill-available;
     width: 120px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
@@ -902,7 +903,7 @@ body {
 
 @media screen and (max-width: 992px) {
   .page-cont .left-side {
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     width: 0px;
@@ -941,6 +942,17 @@ body {
   }
   .page-cont .right-side {
     width: 100%;
+  }
+  .page-cont .right-side .top-panel {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background: #fff;
+    z-index: 100;
+  }
+  .page-cont .right-side .page-content {
+    padding-top: 80px;
   }
   .mobile-menu {
     display: -webkit-box;
