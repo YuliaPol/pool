@@ -852,8 +852,11 @@ body {
     width: 120px;
   }
   .page-cont .left-side .main-panel {
-    height: auto;
-    min-height: initial;
+    min-height: 100vh;
+    height: 100vh;
+    /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+    height: -webkit-fill-available;
     width: 120px;
     border-top-left-radius: 0px;
   }
@@ -910,11 +913,11 @@ body {
   .page-cont .left-side .main-panel {
     padding-top: 50px;
     position: fixed;
-    left: -200px;
+    left: -250px;
     -webkit-transition: left 0.3s ease-in;
     -o-transition: left 0.3s ease-in;
     transition: left 0.3s ease-in;
-    width: 200px;
+    width: 250px;
   }
   .page-cont .left-side .main-panel.open {
     left: 0px;
@@ -970,6 +973,13 @@ body {
   }
   .page-cont .right-side .page-content .pool-list .pool-item {
     padding: 15px;
+  }
+  .page-cont .left-side .faq-block .faq-img img {
+    max-height: 100px;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -o-object-position: center;
+       object-position: center;
   }
 }
 

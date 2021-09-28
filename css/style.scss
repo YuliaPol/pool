@@ -624,12 +624,10 @@ $color-stack:
             min-height: 100vh;
             width: 120px;
             .main-panel {
-                // min-height: 100vh;
-                // height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-                // height: calc(var(--vh, 1vh) * 100);
-                // height: -webkit-fill-available;
-                height: auto;
-                min-height: initial;
+                min-height: 100vh;
+                height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+                height: calc(var(--vh, 1vh) * 100);
+                height: -webkit-fill-available;
                 width: 120px;
                 border-top-left-radius: 0px;
                 // border-bottom-left-radius: 0px;
@@ -690,9 +688,9 @@ $color-stack:
             .main-panel {
                 padding-top: 50px;
                 position: fixed;
-                left: -200px;
+                left: -250px;
                 transition: left 0.3s ease-in;
-                width: 200px;
+                width: 250px;
                 &.open {
                     left: 0px;
                 }
@@ -743,6 +741,15 @@ $color-stack:
         }
         .page-content .pool-list .pool-item {
             padding: 15px;
+        }
+    }
+    .page-cont .left-side .faq-block {
+        .faq-img {
+            img {
+                max-height: 100px;
+                object-fit: contain;
+                object-position: center;
+            }
         }
     }
 }
