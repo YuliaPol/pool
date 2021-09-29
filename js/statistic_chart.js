@@ -21,9 +21,8 @@ if(typeof statisticData !== 'undefined'  && statisticData.data.length > 0 && $('
                   let top = positionY[0][i] + 20;
                   let left = positionX[0][i] + offsetX;
                   let htmlTooltip = '<div class="tooltips-line" style="top: '+ top +'px; left: '+ left +'px;"><div class="tooltip-content">' + statisticData.data[i] + 'h</div></div>'
-                  $(htmlTooltip).appendTo($('.apexcharts-canvas'));
-                  setTimeout(function(){ $('.apexcharts-canvas').find('.tooltips-line').addClass('shown'); }, 500);
-                  
+                  $(htmlTooltip).appendTo($(chartContext.el).find('.apexcharts-canvas'));
+                  setTimeout(function(){ $(chartContext.el).find('.tooltips-line').addClass('shown'); }, 500);
                 }
             },
             updated: function (chartContext, config)  {
@@ -34,7 +33,7 @@ if(typeof statisticData !== 'undefined'  && statisticData.data.length > 0 && $('
                   let top = positionY[0][i] + 20;
                   let left = positionX[0][i] + offsetX;
                   let htmlTooltip = '<div  class="tooltips-line shown" style="top: '+ top +'px; left: '+ left +'px;"><div class="tooltip-content">' + statisticData.data[i] + 'h</div></div>'
-                  $(htmlTooltip).appendTo($('.apexcharts-canvas'));
+                  $(htmlTooltip).appendTo($(chartContext.el).find('.apexcharts-canvas'));
                 }
             },
         }

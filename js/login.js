@@ -44,5 +44,7 @@ jQuery(function ($) {
                 return true;
             }
         });
+        // preloader
+        $('.load-wrapper').fadeOut();
     });
 });
