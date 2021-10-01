@@ -196,11 +196,6 @@ body {
   width: 215px;
 }
 
-.login-page .login-content .formCenter form {
-  max-width: 345px;
-  margin: auto;
-}
-
 .login-page .login-content .login-form,
 .login-page .login-content .agreement-form {
   padding-left: calc(50% + 50px);

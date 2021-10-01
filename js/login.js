@@ -18,14 +18,21 @@ jQuery(function ($) {
         loginForm.submit(function (e) {
            return validForm();
         });
-        $('input').change(function(e){
-            if(validForm()){
-                $(this).parents('form').find('.btn-submit').addClass('active');
-            }
-        });
-        if(validForm()){
-            $('form').find('.btn-submit').addClass('active');
+        if($('.interests-content').length === 0){
+            $('input').change(function(e){
+                if(validForm()){
+                    $(this).parents('form').find('.btn-submit').addClass('active');
+                }
+            });
         }
+        if($('.interests-content').length === 0){
+            if(validForm()){
+                $('form').find('.btn-submit').addClass('active');
+            }
+        }
+        $('.interests-content').on('change', '.interest-item input', function(e){
+            $(this).parents('form').find('.btn-submit').addClass('active');
+        });
         if($('.text-popUp').length > 0){
             setTimeout(function(){ $('.text-popUp').fadeOut(300); }, 3000);
         }
