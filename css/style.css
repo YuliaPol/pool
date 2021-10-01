@@ -445,6 +445,18 @@ body {
   border-radius: 25px;
   padding: 25px 40px;
   margin-bottom: 20px;
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  transition: -webkit-transform 0.3s ease-in;
+  -o-transition: -o-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in, -o-transform 0.3s ease-in;
+}
+
+.page-cont .right-side .page-content .pool-list .pool-item:hover {
+  -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+       -o-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 
 .page-cont .right-side .page-content .pool-list .pool-item .pool-row {
@@ -765,6 +777,43 @@ body {
   text-decoration: none;
   outline: none;
   border: none;
+  display: block;
+}
+
+.page-cont .btn-putInfo {
+  position: relative;
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  transition: -webkit-transform 0.3s ease-in;
+  -o-transition: -o-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in, -o-transform 0.3s ease-in;
+}
+
+.page-cont .btn-putInfo::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  -webkit-box-shadow: 0px 4px 4px rgba(255, 114, 98, 0.3);
+          box-shadow: 0px 4px 4px rgba(255, 114, 98, 0.3);
+  border-radius: 25px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in;
+  -o-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+}
+
+.page-cont .btn-putInfo.shadowed {
+  -webkit-transform: translateY(-3px);
+      -ms-transform: translateY(-3px);
+       -o-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+
+.page-cont .btn-putInfo.shadowed::before {
+  opacity: 1;
 }
 
 .apexcharts-canvas .apexcharts-xaxis-tick {

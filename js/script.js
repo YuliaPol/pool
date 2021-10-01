@@ -15,6 +15,15 @@ jQuery(function ($) {
                 $('.mobile-menu').removeClass('open');
             }       
         });
+        $('.center-content').on('mouseover ', '.show-pool.inactive', function(e){
+            $(this).parents('.pool-item').addClass('hovered');
+            $('.btn-putInfo').addClass('shadowed');
+        });
+        $('.center-content').on('mouseout ', '.show-pool.inactive', function(e){
+            $(this).parents('.pool-item').removeClass('hovered');
+            $('.btn-putInfo').removeClass('shadowed');
+        });
+        $('.show-pool')
         // preloader
         $('.load-wrapper').fadeOut();
     });
