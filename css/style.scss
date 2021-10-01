@@ -425,7 +425,7 @@ body {
                         width: 100%;
                     }
                     .data-item  {
-                        padding-bottom: 20px;
+                        padding-bottom: 15px;
                         &.width50 {
                             width: calc(50% - 10px);
                         }
@@ -439,7 +439,7 @@ body {
                             font-size: 13px;
                             line-height: 16px;
                             color: #000000;
-                            padding-bottom: 10px;
+                            padding-bottom: 5px;
                         }
                         .value {
                             font-family: $fontPage;
@@ -448,6 +448,43 @@ body {
                             font-size: 11px;
                             line-height: 13px;
                             color: #000000;
+                            .text-value {
+                                padding-top: 5px;
+                                padding-bottom: 5px;
+                            }
+                        }
+                        .input-value {
+                            display: none;
+                            input {
+                                font-family: $fontPage;
+                                font-style: normal;
+                                font-weight: 300;
+                                font-size: 11px;
+                                line-height: 13px;
+                                color: #000000;
+                                border: 1px solid #C4C4C4;
+                                border-radius: 15px;
+                                outline: none;
+                                padding: 4px 5px;
+                                margin-left: -5px;
+                                width: 100%;
+                                max-width: 345px;
+                            }
+                            .select-styled {
+                                font-family: $fontPage;
+                                font-style: normal;
+                                font-weight: 300;
+                                font-size: 11px;
+                                line-height: 13px;
+                                color: #000000;
+                                border: 1px solid #C4C4C4;
+                                border-radius: 15px;
+                                outline: none;
+                                padding: 4px 5px;
+                                margin-left: -5px;
+                                width: 100%;
+                                max-width: 345px; 
+                            }
                         }
                     }
                 }

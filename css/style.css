@@ -623,7 +623,7 @@ body {
 }
 
 .page-cont .right-side .page-content .data-list .data-block .data-item {
-  padding-bottom: 20px;
+  padding-bottom: 15px;
 }
 
 .page-cont .right-side .page-content .data-list .data-block .data-item.width50 {
@@ -641,7 +641,7 @@ body {
   font-size: 13px;
   line-height: 16px;
   color: #000000;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 .page-cont .right-side .page-content .data-list .data-block .data-item .value {
@@ -651,6 +651,47 @@ body {
   font-size: 11px;
   line-height: 13px;
   color: #000000;
+}
+
+.page-cont .right-side .page-content .data-list .data-block .data-item .value .text-value {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.page-cont .right-side .page-content .data-list .data-block .data-item .input-value {
+  display: none;
+}
+
+.page-cont .right-side .page-content .data-list .data-block .data-item .input-value input {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 13px;
+  color: #000000;
+  border: 1px solid #C4C4C4;
+  border-radius: 15px;
+  outline: none;
+  padding: 4px 5px;
+  margin-left: -5px;
+  width: 100%;
+  max-width: 345px;
+}
+
+.page-cont .right-side .page-content .data-list .data-block .data-item .input-value .select-styled {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 13px;
+  color: #000000;
+  border: 1px solid #C4C4C4;
+  border-radius: 15px;
+  outline: none;
+  padding: 4px 5px;
+  margin-left: -5px;
+  width: 100%;
+  max-width: 345px;
 }
 
 .page-cont .right-side .page-content .right-block {
