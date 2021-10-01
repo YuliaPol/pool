@@ -96,13 +96,16 @@ body {
         text-align: center;
         border: none;
         outline: none;
-        cursor: pointer;
         transition: all 0.3s ease-in;
         text-decoration: none;
         display: block;
-        &:hover {
+        cursor: not-allowed;
+        pointer-events: none;
+        &.active {
             color: #FFFFFF;
             background-position: left;
+            cursor: pointer;
+            pointer-events: initial;
         }
     }
     .btn-white {
@@ -134,7 +137,6 @@ body {
         .img-cont {
             height:100%;
             width: 50%;
-            max-width: 800px;
             position: absolute;
             top: 0px;
             left: 0px;
@@ -142,7 +144,9 @@ body {
             overflow: hidden;
             text-align: center;
             img {
-                max-width: 100%;           
+                // max-width: 100%;  
+                width: 100%;
+                max-width: 468px;         
             }
         }
         .detail-form-text-cont {

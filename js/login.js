@@ -16,24 +16,32 @@ jQuery(function ($) {
         }
         let loginForm = $('.send-form').find('form');
         loginForm.submit(function (e) {
+           return validForm();
+        });
+        $('input').change(function(e){
+            if(validForm()){
+                $(this).parents('form').find('.btn-submit').addClass('active');
+            }
+        });
+        function validForm(){
             var erroreArrayElemnts = [];
             var el = loginForm.find('[data-reqired]');
             for (let i = 0; i < el.length; i++) {
                 if(el[i].type === 'checkbox'){
                     if(el[i].checked == false){
                         erroreArrayElemnts.push(el[i]);
-                        $(el[i]).parents('.radio-input').addClass('has-error');
-                        $(el[i]).change(function (e) {
-                            $(el[i]).parents('.radio-input').removeClass('has-error');
-                        });
+                        // $(el[i]).parents('.radio-input').addClass('has-error');
+                        // $(el[i]).change(function (e) {
+                        //     $(el[i]).parents('.radio-input').removeClass('has-error');
+                        // });
                     }
                 } else {
                     if (el[i].value === '' || el[i].value === ' ' || el[i].value === '-') {
                         erroreArrayElemnts.push(el[i]);
-                        $(el[i]).parents('.login-input').addClass('has-error');
-                        $(el[i]).focus(function (e) {
-                            $(el[i]).parents('.login-input').removeClass('has-error');
-                        });
+                        // $(el[i]).parents('.login-input').addClass('has-error');
+                        // $(el[i]).focus(function (e) {
+                        //     $(el[i]).parents('.login-input').removeClass('has-error');
+                        // });
                     }
                 }
             }
@@ -43,7 +51,7 @@ jQuery(function ($) {
             else {
                 return true;
             }
-        });
+        }
         // preloader
         $('.load-wrapper').fadeOut();
     });

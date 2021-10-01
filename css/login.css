@@ -110,17 +110,20 @@ body {
   text-align: center;
   border: none;
   outline: none;
-  cursor: pointer;
   -webkit-transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
   text-decoration: none;
   display: block;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
-.login-page .btn-submit:hover {
+.login-page .btn-submit.active {
   color: #FFFFFF;
   background-position: left;
+  cursor: pointer;
+  pointer-events: initial;
 }
 
 .login-page .btn-white {
@@ -157,7 +160,6 @@ body {
 .login-page .login-content .img-cont {
   height: 100%;
   width: 50%;
-  max-width: 800px;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -167,7 +169,8 @@ body {
 }
 
 .login-page .login-content .img-cont img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 468px;
 }
 
 .login-page .login-content .detail-form-text-cont {
