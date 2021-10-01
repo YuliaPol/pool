@@ -23,6 +23,12 @@ jQuery(function ($) {
                 $(this).parents('form').find('.btn-submit').addClass('active');
             }
         });
+        if(validForm()){
+            $('form').find('.btn-submit').addClass('active');
+        }
+        if($('.text-popUp').length > 0){
+            setTimeout(function(){ $('.text-popUp').fadeOut(300); }, 3000);
+        }
         function validForm(){
             var erroreArrayElemnts = [];
             var el = loginForm.find('[data-reqired]');
