@@ -28,7 +28,7 @@
             <form action="./interests_monthly.html">
                 <div class="interests-list">
                     <div class="interest-item">
-                        <input type="checkbox" name="q-1" id="q-1" value="Путешествия">
+                        <input type="checkbox" name="q-1" id="q-1" value="Путешествия" data-id="1">
                         <label for="q-1">
                             <div class="icon"></div>
                             <div class="name">
@@ -37,7 +37,7 @@
                         </label>
                     </div>
                     <div class="interest-item">
-                        <input type="checkbox" name="q-2" id="q-2" value="Медицина">
+                        <input type="checkbox" name="q-2" id="q-2" value="Медицина" data-id="2">
                         <label for="q-2">
                             <div class="icon"></div>
                             <div class="name">
@@ -46,7 +46,7 @@
                         </label>
                     </div>
                     <div class="interest-item">
-                        <input type="checkbox" name="q-3" id="q-3" value="Животные">
+                        <input type="checkbox" name="q-3" id="q-3" value="Животные" data-id="3">
                         <label for="q-3">
                             <div class="icon"></div>
                             <div class="name">
@@ -55,7 +55,7 @@
                         </label>
                     </div>
                     <div class="interest-item">
-                        <input type="checkbox" name="q-4" id="q-4" value="Кино">
+                        <input type="checkbox" name="q-4" id="q-4" value="Кино" data-id="4">
                         <label for="q-4">
                             <div class="icon"></div>
                             <div class="name">
@@ -64,7 +64,7 @@
                         </label>
                     </div>
                     <div class="interest-item">
-                        <input type="checkbox" name="q-5" id="q-5" value="Дети">
+                        <input type="checkbox" name="q-5" id="q-5" value="Дети"  data-id="5">
                         <label for="q-5">
                             <div class="icon"></div>
                             <div class="name">
@@ -73,7 +73,7 @@
                         </label>
                     </div>
                     <div class="interest-item">
-                        <input type="checkbox" name="q-6" id="q-6" value="Красота">
+                        <input type="checkbox" name="q-6" id="q-6" value="Красота"  data-id="6">
                         <label for="q-6">
                             <div class="icon"></div>
                             <div class="name">
@@ -82,7 +82,7 @@
                         </label>
                     </div>
                     <div class="interest-item">
-                        <input type="checkbox" name="q-7" id="q-7" value="Досуг">
+                        <input type="checkbox" name="q-7" id="q-7" value="Досуг"  data-id="7">
                         <label for="q-7">
                             <div class="icon"></div>
                             <div class="name">
@@ -91,7 +91,7 @@
                         </label>
                     </div>
                     <div class="interest-item">
-                        <input type="checkbox" name="q-8" id="q-8" value="Еда">
+                        <input type="checkbox" name="q-8" id="q-8" value="Еда"  data-id="8">
                         <label for="q-8">
                             <div class="icon"></div>
                             <div class="name">
@@ -157,6 +157,144 @@
                 id: 16,
             },
         ];
+        let subCategories = [
+            {
+                idParent: 1,
+                categories: [
+                    {
+                        name: "Автомобили",
+                        id: 17
+                    },
+                    {
+                        name: "Горы",
+                        id: 18  
+                    },
+                    {
+                        name: "Архитектура",
+                        id: 19  
+                    },
+                    {
+                        name: "ЖД транспорт",
+                        id: 33  
+                    },
+                    {
+                        name: "Отдых",
+                        id: 34  
+                    },
+                    {
+                        name: "Аквапарки",
+                        id: 35  
+                    },
+                    {
+                        name: "Велопрогулки",
+                        id: 36  
+                    }
+                ]
+            }, {
+                idParent: 2,
+                categories: [
+                    {
+                        name: "Психология",
+                        id: 21
+                    },
+                    {
+                        name: "Иммунология‎",
+                        id: 22  
+                    },
+                ]
+            }, {
+                idParent: 3,
+                categories: [
+                    {
+                        name: "Дикие животные",
+                        id: 23
+                    },
+                    {
+                        name: "Домашние животные",
+                        id: 24  
+                    },
+                ]
+            }, {
+                idParent: 4,
+                categories: [
+                    {
+                        name: "Триллер",
+                        id: 25
+                    },
+                    {
+                        name: "Кинокомедия",
+                        id: 26  
+                    },
+                ]
+            }, {
+                idParent: 6,
+                categories: [
+                    {
+                        name: "Уходовая косметика",
+                        id: 27
+                    },
+                    {
+                        name: "Декоративная косметика",
+                        id: 28  
+                    },
+                ]
+            }, {
+                idParent: 7,
+                categories: [
+                    {
+                        name: "Книги",
+                        id: 29
+                    },
+                    {
+                        name: "Спорт",
+                        id: 30  
+                    },
+                ]
+            }, {
+                idParent: 8,
+                categories: [
+                    {
+                        name: "Кофейни",
+                        id: 31
+                    },
+                    {
+                        name: "Рестораны",
+                        id: 32  
+                    },
+                ]
+            }
+        ];
+        $('.interests-content').on('change', '.interest-item input', function(e){
+            if(subCategories.length > 0) {
+                let id = parseInt($(this).attr('data-id'));
+                let subCategoryArray = subCategories.filter(obj => {
+                    return obj.idParent === id;
+                });
+                if(subCategoryArray.length > 0) {
+                    let newCategories = subCategoryArray[0].categories;
+                    let addHtml = ""
+                    let i;
+                    for (i = 0; i < newCategories.length; i++) {
+                        if(i === 8) {
+                            break;
+                        }
+                        addHtml += 
+                        '<div class="interest-item">'
+                        +'    <input type="checkbox" name="q-' + newCategories[i].id + '" id="q-' + newCategories[i].id + '"'
+                        +'     value="' + newCategories[i].name + '"  data-id="' + newCategories[i].id + '">'
+                        +'  <label for="q-' + newCategories[i].id + '">'
+                        +'        <div class="icon"></div>'
+                        +'       <div class="name">'
+                        + newCategories[i].name
+                        +'        </div>'
+                        +'    </label>'
+                        +'</div>';
+                    }
+                    $(addHtml).insertAfter($(this).parents('.interest-item'));
+                    subCategories.splice(subCategories.findIndex(obj => obj.idParent === id),1);
+                }
+            }
+        });
         $('.show-more').click(function(e){
             let addHtml = ""
             let i;
@@ -166,7 +304,8 @@
                 }
                 addHtml += 
                 '<div class="interest-item">'
-                +'    <input type="checkbox" name="q-' + moreInterests[i].id + '" id="q-' + moreInterests[i].id + '" value="' + moreInterests[i].name + '">'
+                +'    <input type="checkbox" name="q-' + moreInterests[i].id + '" id="q-' + moreInterests[i].id + '"'
+                +'     value="' + moreInterests[i].name + '"  data-id="' + moreInterests[i].id + '">'
                 +'  <label for="q-' + moreInterests[i].id + '">'
                 +'        <div class="icon"></div>'
                 +'       <div class="name">'

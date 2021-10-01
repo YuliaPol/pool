@@ -348,6 +348,13 @@ body {
             .interest-item {
                 width: 25%;
                 padding-bottom: 20px;
+                &.show-more {
+                    width: 100%;
+                    & > div {
+                        width: 25%;
+                        margin: auto;
+                    }
+                }
                 input[type=checkbox]{
                     display: none;
                     &:checked {
@@ -418,6 +425,7 @@ body {
                         line-height: 19px;
                         color: #FFFFFF;
                         padding-right: 30px;
+                        padding-left: 5px;
                     }
                 }
             }
@@ -490,6 +498,13 @@ body {
             padding-right: 40px;
             .interests-list .interest-item {
                 width: 33.3%;
+                &.show-more {
+                    width: 100%;
+                    & > div {
+                        width: 33.3%;
+                        margin: auto;
+                    }
+                }
             }
         }
     }
@@ -507,6 +522,13 @@ body {
                 padding-top: 50px;
                 .interest-item {
                     width: 50%;
+                    &.show-more {
+                        width: 100%;
+                        & > div {
+                            width: 50%;
+                            margin: auto;
+                        }
+                    }
                 }
             }
             .login-header {
@@ -568,6 +590,13 @@ body {
                 padding-top: 40px;
                 .interest-item {
                     width: 50%;
+                    &.show-more {
+                        width: 100%;
+                        & > div {
+                            width: 50%;
+                            margin: auto;
+                        }
+                    }
                     label,
                     .item-label {
                         padding: 10px;
@@ -640,6 +669,13 @@ body {
                 padding-top: 40px;
                 .interest-item {
                     width: 100%;
+                    &.show-more {
+                        width: 100%;
+                        & > div {
+                            width: 100%;
+                            margin: auto;
+                        }
+                    }
                 }
             }
         }

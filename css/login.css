@@ -509,6 +509,15 @@ body {
   padding-bottom: 20px;
 }
 
+.login-page .interests-content .interests-list .interest-item.show-more {
+  width: 100%;
+}
+
+.login-page .interests-content .interests-list .interest-item.show-more > div {
+  width: 25%;
+  margin: auto;
+}
+
 .login-page .interests-content .interests-list .interest-item input[type=checkbox] {
   display: none;
 }
@@ -609,6 +618,7 @@ body {
   line-height: 19px;
   color: #FFFFFF;
   padding-right: 30px;
+  padding-left: 5px;
 }
 
 .login-page .interests-content .btn-cont {
@@ -690,6 +700,13 @@ body {
   .login-page .interests-content .interests-list .interest-item {
     width: 33.3%;
   }
+  .login-page .interests-content .interests-list .interest-item.show-more {
+    width: 100%;
+  }
+  .login-page .interests-content .interests-list .interest-item.show-more > div {
+    width: 33.3%;
+    margin: auto;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -706,6 +723,13 @@ body {
   }
   .login-page .interests-content .interests-list .interest-item {
     width: 50%;
+  }
+  .login-page .interests-content .interests-list .interest-item.show-more {
+    width: 100%;
+  }
+  .login-page .interests-content .interests-list .interest-item.show-more > div {
+    width: 50%;
+    margin: auto;
   }
   .login-page .interests-content .login-header {
     font-size: 32px;
@@ -762,6 +786,13 @@ body {
   }
   .login-page .interests-content .interests-list .interest-item {
     width: 50%;
+  }
+  .login-page .interests-content .interests-list .interest-item.show-more {
+    width: 100%;
+  }
+  .login-page .interests-content .interests-list .interest-item.show-more > div {
+    width: 50%;
+    margin: auto;
   }
   .login-page .interests-content .interests-list .interest-item label,
   .login-page .interests-content .interests-list .interest-item .item-label {
@@ -842,6 +873,13 @@ body {
   }
   .login-page .interests-content .interests-list .interest-item {
     width: 100%;
+  }
+  .login-page .interests-content .interests-list .interest-item.show-more {
+    width: 100%;
+  }
+  .login-page .interests-content .interests-list .interest-item.show-more > div {
+    width: 100%;
+    margin: auto;
   }
 }
 
