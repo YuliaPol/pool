@@ -91,5 +91,36 @@ jQuery(function ($) {
                 owl.trigger('next.owl.carousel');
             });
         }
+
+        //faq block
+        $('.show-faq-block').click(function(e){
+            $(this).parent().fadeOut(0);
+            $('.left-side').find('.faq-block').fadeIn(300);
+        });
+
+        //autoheight for message in chat
+        $(".chat-wrapper textarea").each(function () {
+            this.setAttribute("style", "height:" + (this.scrollHeight) + "px;");
+        }).on("input", function () {
+            this.style.height = "auto";
+            this.style.height = (this.scrollHeight) + 2 + "px";
+        });
+
+        $('.chat-wrapper').on('click', '.expand', function(e){
+            if($(this).hasClass('active')){
+                $(this).removeClass('active');
+                $(this).parents('.chat-wrapper').removeClass('expanded');
+                $(this).parents('.main-panel').find('.top-content').fadeIn(0);
+            } else {
+                $(this).addClass('active');
+                $(this).parents('.main-panel').find('.top-content').fadeOut(0);
+                $(this).parents('.chat-wrapper').addClass('expanded');
+            }
+        });
+        $('.left-side').on('click', '.show-chat', function(e){
+            $(this).parents('.faq-block').fadeOut(0);
+            $(this).parents('.left-side').find('.chat-wrapper').fadeIn(300);
+        });
+        
     });
 });
