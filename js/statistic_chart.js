@@ -4,7 +4,7 @@ if(typeof statisticData !== 'undefined'  && statisticData.data.length > 0 && $('
         data: statisticData.data
       }],
       chart: {
-        height: 205,
+        height: 250,
         type: 'line',
         zoom: {
           enabled: false

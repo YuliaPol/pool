@@ -57,5 +57,39 @@ jQuery(function ($) {
         }
         // preloader
         $('.load-wrapper').fadeOut();
+
+        //progress circle for pool
+        let progress = $('.progress-cirlce');
+        for (let i = 0; i < progress.length; i++) {
+            var percentageComplete = parseInt($(progress[i]).attr('data-percent'))/100;
+            var strokeDashOffsetValue = 100 - (percentageComplete * 100);
+            var progressBar = $(progress[i]).find('.js-progress-bar');
+            progressBar.css('stroke-dashoffset', strokeDashOffsetValue);
+        }
+
+        // owl carousel for unfinished pools
+        if($.fn.owlCarousel){
+            $('.unfinished-pools-list').owlCarousel({
+                items: 1,
+                margin: 0,
+                loop: true,
+                center: true,
+                stagePadding: 0,
+                nav: false,
+                lazyLoad: true,
+                autoHeight : true,
+                dots: false,
+            });
+            var owl = $('.unfinished-pools-list');
+            owl.owlCarousel();
+            let widthOwlItem = $('.unfinished-pools-list').find('.owl-item.active').width();
+            $('.unfinished-pools-list').css( "maxWidth", widthOwlItem + "px" );
+            $('.unfinished-pools-block').on('click', '.btn-prev', function(e){
+                owl.trigger('prev.owl.carousel');
+            });
+            $('.unfinished-pools-block').on('click', '.btn-next', function(e){
+                owl.trigger('next.owl.carousel');
+            });
+        }
     });
 });
