@@ -130,6 +130,11 @@ jQuery(function ($) {
             $(this).parents('.faq-block').fadeOut(0);
             $(this).parents('.left-side').find('.chat-wrapper').fadeIn(300);
         });
+
+        // click on inactive btn
+        $('.page-content').on('click', '.pool-item .inactive .start-pool', function(e){
+            e.preventDefault();
+        });
         
     });
 });
