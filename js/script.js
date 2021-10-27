@@ -95,7 +95,8 @@ jQuery(function ($) {
         //faq block
         $('.show-faq-block').click(function(e){
             $(this).parent().fadeOut(0);
-            $('.left-side').find('.faq-block').fadeIn(300);
+
+            $('.left-side').find('.faq-block').addClass('visible');
         });
 
         //autoheight for message in chat
@@ -106,6 +107,7 @@ jQuery(function ($) {
             this.style.height = (this.scrollHeight) + 2 + "px";
         });
 
+        //acpant chat
         $('.chat-wrapper').on('click', '.expand', function(e){
             if($(this).hasClass('active')){
                 $(this).removeClass('active');
@@ -117,6 +119,13 @@ jQuery(function ($) {
                 $(this).parents('.chat-wrapper').addClass('expanded');
             }
         });
+        $('.chat-wrapper textarea').keypress(function (e) {
+            if (e.which == 13) {
+                $('.chat-wrapper form').submit();
+                return false;
+            }
+        });
+        //show chat
         $('.left-side').on('click', '.show-chat', function(e){
             $(this).parents('.faq-block').fadeOut(0);
             $(this).parents('.left-side').find('.chat-wrapper').fadeIn(300);
