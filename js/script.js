@@ -12,12 +12,13 @@ jQuery(function ($) {
                 $('.mobile-menu').removeClass('open');
             }
         });
-        $('.center-content').on('mouseover ', '.show-pool.inactive', function(e){
-            $(this).parents('.pool-item').addClass('hovered');
+        $('.center-block').on('mouseover ', '.inactive .start-pool', function(e){
+            console.log(e);
+            // $(this).parents('.pool-item').addClass('hovered');
             $('.btn-putInfo').addClass('shadowed');
         });
-        $('.center-content').on('mouseout ', '.show-pool.inactive', function(e){
-            $(this).parents('.pool-item').removeClass('hovered');
+        $('.center-block').on('mouseout ', '.inactive .start-pool', function(e){
+            // $(this).parents('.pool-item').removeClass('hovered');
             $('.btn-putInfo').removeClass('shadowed');
         });
         $('.center-content').on('click', '.data-item .text-value', function(e){
