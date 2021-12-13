@@ -70,7 +70,7 @@ jQuery(function ($) {
 
         // owl carousel for unfinished pools
         if($.fn.owlCarousel){
-            $('.unfinished-pools-list').owlCarousel({
+            let wysiwyg_owloptions = {
                 items: 1,
                 margin: 0,
                 loop: true,
@@ -80,9 +80,12 @@ jQuery(function ($) {
                 lazyLoad: true,
                 autoHeight : true,
                 dots: false,
-            });
-            var owl = $('.unfinished-pools-list');
-            owl.owlCarousel();
+            }
+            // $('.unfinished-pools-list').owlCarousel(
+            //     wysiwyg_owloptions
+            // );
+            var owl = $('.unfinished-pools-list').owlCarousel(wysiwyg_owloptions);;
+            owlResize(owl);
             let widthOwlItem = $('.unfinished-pools-list').find('.owl-item.active').width();
             $('.unfinished-pools-list').css( "maxWidth", widthOwlItem + "px" );
             $('.unfinished-pools-block').on('click', '.btn-prev', function(e){
@@ -90,6 +93,16 @@ jQuery(function ($) {
             });
             $('.unfinished-pools-block').on('click', '.btn-next', function(e){
                 owl.trigger('next.owl.carousel');
+            });
+
+            function owlResize($owl) {
+                $owl.trigger('destroy.owl.carousel');
+                $owl.html($owl.find('.owl-stage-outer').html()).removeClass('owl-loaded');
+                $owl.owlCarousel(wysiwyg_owloptions);
+            }
+
+            $( window ).resize(function() {
+                
             });
         }
 
