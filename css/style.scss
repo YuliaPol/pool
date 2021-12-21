@@ -494,6 +494,74 @@ body {
                 background: #F5F5F7;
                 border-radius: 14px;
                 margin-bottom: 20px;
+                .notifications {
+                    max-height: 34px;
+                    min-height: 34px;
+                    overflow: hidden;
+                    padding-top: 5px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    margin-left: -10px;
+                    margin-right: -10px;
+                    max-width: 365px;
+                    scroll-behavior: smooth;
+                    position: relative;
+                    &::-webkit-scrollbar-track {
+                        background-color: transparent;
+                    }
+                    &::-webkit-scrollbar {
+                        width: 5px;
+                        background: transparent;
+                    }
+                    &::-webkit-scrollbar-thumb {
+                        border-radius: 25px;
+                        background-color: rgba(0, 0, 0, 0.5);;
+                    }
+                    &:hover {
+                        overflow: auto;
+                    }
+                    .notification {
+                        font-family: $fontPage;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 16px;
+                        line-height: 24px;
+                        color: #0C0B0B;
+                        padding-bottom: 5px;
+                        padding-top: 5px;
+                        &.unread {
+                            position: relative;
+                            z-index: 5;
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                background: #FF7262;
+                                width: 15px;
+                                height: 15px;
+                                border-radius: 50%;
+                                left: -7px;
+                                top: 1px;
+                                z-index: -1;
+                            }
+                            a {
+                                text-decoration: solid underline 2px;
+                                text-underline-offset: 3px;
+                            }
+                        }
+                        a {
+                            font-family: $fontPage;
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 16px;
+                            line-height: 24px;
+                            color: #0C0B0B;
+                            text-decoration: none;
+                            outline: none;
+                            display: inline-block;
+                            position: relative;
+                        }
+                    }
+                }
                 .flex-row {
                     display: flex;
                     align-items: stretch;

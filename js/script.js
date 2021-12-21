@@ -150,5 +150,40 @@ jQuery(function ($) {
             e.preventDefault();
         });
         
+        //make notifications scroll slowly to next element
+        $('.notifications').on('mousewheel', function(e){
+            console.log('mousewheel');
+            wheel(e);
+        });
+        function wheel(event) {
+            let koef = 1;
+            if(event.originalEvent.deltaY > 0) {
+                koef = -1;
+            }
+            handle(koef);
+            if (event.preventDefault) event.preventDefault();
+            event.returnValue = false;
+        }
+
+        function handle(koef) {
+            var time = 100;
+            let curElement = $('.notifications').find('.current');
+            let scrollNext = 0;
+            if(koef > 0){
+                scrollNext = curElement.prev();
+            } else {
+                scrollNext = curElement.next();
+            }
+            scrollNext.addClass('current');
+            // console.log(scrollNext.offset().top);
+            if(scrollNext.length > 0){
+                curElement.removeClass('current');
+                scrollNext.addClass('current');
+                let top = $('.notifications').scrollTop() - $('.notifications').offset().top + scrollNext.offset().top;
+                $('.notifications').stop().animate({
+                    scrollTop: top,
+                }, time );
+            }
+        }
     });
 });

@@ -695,6 +695,85 @@ body {
   margin-bottom: 20px;
 }
 
+.page-cont .right-side .page-content .wellcome-block .notifications {
+  max-height: 34px;
+  min-height: 34px;
+  overflow: hidden;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  max-width: 365px;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+.page-cont .right-side .page-content .wellcome-block .notifications::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.page-cont .right-side .page-content .wellcome-block .notifications::-webkit-scrollbar {
+  width: 5px;
+  background: transparent;
+}
+
+.page-cont .right-side .page-content .wellcome-block .notifications::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.page-cont .right-side .page-content .wellcome-block .notifications:hover {
+  overflow: auto;
+}
+
+.page-cont .right-side .page-content .wellcome-block .notifications .notification {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0C0B0B;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.page-cont .right-side .page-content .wellcome-block .notifications .notification.unread {
+  position: relative;
+  z-index: 5;
+}
+
+.page-cont .right-side .page-content .wellcome-block .notifications .notification.unread::before {
+  content: "";
+  position: absolute;
+  background: #FF7262;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  left: -7px;
+  top: 1px;
+  z-index: -1;
+}
+
+.page-cont .right-side .page-content .wellcome-block .notifications .notification.unread a {
+  -webkit-text-decoration: solid underline 2px;
+          text-decoration: solid underline 2px;
+  text-underline-offset: 3px;
+}
+
+.page-cont .right-side .page-content .wellcome-block .notifications .notification a {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0C0B0B;
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  position: relative;
+}
+
 .page-cont .right-side .page-content .wellcome-block .flex-row {
   display: -webkit-box;
   display: -webkit-flex;
