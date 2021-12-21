@@ -518,12 +518,12 @@ body {
                         background-color: rgba(0, 0, 0, 0.5);;
                     }
                     &:hover {
-                        overflow: auto;
+                        overflow-y: overlay;
                     }
                     .notification {
                         font-family: $fontPage;
                         font-style: normal;
-                        font-weight: normal;
+                        font-weight: 400;
                         font-size: 16px;
                         line-height: 24px;
                         color: #0C0B0B;
@@ -551,7 +551,7 @@ body {
                         a {
                             font-family: $fontPage;
                             font-style: normal;
-                            font-weight: normal;
+                            font-weight: 400;
                             font-size: 16px;
                             line-height: 24px;
                             color: #0C0B0B;
@@ -562,6 +562,9 @@ body {
                             text-decoration: solid underline 2px;
                             text-underline-offset: 3px;
                             text-decoration-color: #C4C4C6;
+                            .main-text {
+                                font-weight: 700;
+                            }
                         }
                     }
                 }

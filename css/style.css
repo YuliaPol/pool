@@ -724,13 +724,13 @@ body {
 }
 
 .page-cont .right-side .page-content .wellcome-block .notifications:hover {
-  overflow: auto;
+  overflow-y: overlay;
 }
 
 .page-cont .right-side .page-content .wellcome-block .notifications .notification {
   font-family: "Gilroy", Verdana, Tahoma, sans-serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: #0C0B0B;
@@ -764,7 +764,7 @@ body {
 .page-cont .right-side .page-content .wellcome-block .notifications .notification a {
   font-family: "Gilroy", Verdana, Tahoma, sans-serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: #0C0B0B;
@@ -777,6 +777,10 @@ body {
   text-underline-offset: 3px;
   -webkit-text-decoration-color: #C4C4C6;
           text-decoration-color: #C4C4C6;
+}
+
+.page-cont .right-side .page-content .wellcome-block .notifications .notification a .main-text {
+  font-weight: 700;
 }
 
 .page-cont .right-side .page-content .wellcome-block .flex-row {
