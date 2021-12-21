@@ -696,8 +696,8 @@ body {
 }
 
 .page-cont .right-side .page-content .wellcome-block .notifications {
-  max-height: 34px;
-  min-height: 34px;
+  max-height: 64px;
+  min-height: 64px;
   overflow: hidden;
   padding-top: 5px;
   padding-left: 10px;
@@ -736,6 +736,7 @@ body {
   color: #0C0B0B;
   padding-bottom: 5px;
   padding-top: 5px;
+  min-height: 64px;
 }
 
 .page-cont .right-side .page-content .wellcome-block .notifications .notification.unread {
@@ -756,9 +757,7 @@ body {
 }
 
 .page-cont .right-side .page-content .wellcome-block .notifications .notification.unread a {
-  -webkit-text-decoration: solid underline 2px;
-          text-decoration: solid underline 2px;
-  text-underline-offset: 3px;
+  border-color: #000000;
 }
 
 .page-cont .right-side .page-content .wellcome-block .notifications .notification a {
@@ -772,6 +771,10 @@ body {
   outline: none;
   display: inline-block;
   position: relative;
+  -webkit-text-decoration: solid underline 2px;
+          text-decoration: solid underline 2px;
+  text-underline-offset: 3px;
+  border-color: #C4C4C6;
 }
 
 .page-cont .right-side .page-content .wellcome-block .flex-row {
@@ -792,9 +795,9 @@ body {
 .page-cont .right-side .page-content .wellcome-block .text-col {
   width: 65%;
   padding-top: 45px;
-  padding-bottom: 40px;
   padding-left: 35px;
   padding-right: 5px;
+  padding-bottom: 10px;
 }
 
 .page-cont .right-side .page-content .wellcome-block .text-col .header {
