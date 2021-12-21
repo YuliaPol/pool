@@ -757,7 +757,8 @@ body {
 }
 
 .page-cont .right-side .page-content .wellcome-block .notifications .notification.unread a {
-  border-color: #000000;
+  -webkit-text-decoration-color: #000000;
+          text-decoration-color: #000000;
 }
 
 .page-cont .right-side .page-content .wellcome-block .notifications .notification a {
@@ -774,7 +775,8 @@ body {
   -webkit-text-decoration: solid underline 2px;
           text-decoration: solid underline 2px;
   text-underline-offset: 3px;
-  border-color: #C4C4C6;
+  -webkit-text-decoration-color: #C4C4C6;
+          text-decoration-color: #C4C4C6;
 }
 
 .page-cont .right-side .page-content .wellcome-block .flex-row {
