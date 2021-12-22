@@ -822,6 +822,7 @@ body {
   font-size: 16px;
   line-height: 24px;
   color: #0C0B0B;
+  min-height: 64px;
 }
 
 .page-cont .right-side .page-content .wellcome-block .img-col {
