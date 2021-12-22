@@ -180,6 +180,11 @@ body {
                 color: $fontColor;
                 padding-bottom: 20px;
                 max-width: 500px;
+                a {
+                    text-decoration: none;
+                    outline: none;
+                    color: inherit;
+                }
             }
             .radio-input {
                 &.has-error {
