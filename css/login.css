@@ -327,6 +327,7 @@ body {
   border: 1px solid #C4C4C4;
   border-radius: 15px;
   font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-weight: normal;
   font-size: 13px;
   line-height: 15px;
   color: #000000;
@@ -438,7 +439,7 @@ body {
   border-radius: 15px;
   cursor: pointer;
   font-family: "Gilroy", Verdana, Tahoma, sans-serif;
-  font-weight: 300;
+  font-weight: normal;
   font-size: 13px;
   line-height: 15px;
   color: #000000;
