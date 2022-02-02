@@ -4558,6 +4558,82 @@ body {
           background-size: contain;
 }
 
+.datepicker {
+  -webkit-box-shadow: 1px 1px 4px 5px rgba(0, 0, 0, 0.03);
+          box-shadow: 1px 1px 4px 5px rgba(0, 0, 0, 0.03);
+  border-radius: 25px;
+  border: none;
+}
+
+.datepicker .datepicker--pointer {
+  display: none;
+}
+
+.datepicker .datepicker--nav-title,
+.datepicker .datepicker--nav-title i {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.datepicker .datepicker--nav-title:hover,
+.datepicker .datepicker--nav-title i:hover {
+  border-radius: 10px;
+  background: rgba(127, 161, 248, 0.2);
+}
+
+.datepicker .datepicker--nav-action:hover {
+  border-radius: 10px;
+  background: rgba(127, 161, 248, 0.2);
+}
+
+.datepicker .datepicker--nav-action path {
+  stroke: #000000;
+}
+
+.datepicker .datepicker--cells {
+  border-top: 1px solid #F5F5F7;
+}
+
+.datepicker .datepicker--nav {
+  border-bottom: 1px solid #F5F5F7;
+}
+
+.datepicker .datepicker--days-names {
+  margin: 3px 0px;
+}
+
+.datepicker .datepicker--day-name {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 13px;
+  color: #000000;
+}
+
+.datepicker .datepicker--cell {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  color: #000000;
+  border-radius: 10px;
+}
+
+.datepicker .datepicker--cell.-current- {
+  color: #7FA1F8;
+  font-weight: bold;
+}
+
+.datepicker .datepicker--cell.-selected-, .datepicker .datepicker--cell.-focus- {
+  background: rgba(127, 161, 248, 0.2);
+}
+
 @media screen and (max-width: 1400px) {
   .page-cont .right-side .page-content .center-block {
     padding-left: 60px;

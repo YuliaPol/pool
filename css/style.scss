@@ -3359,6 +3359,70 @@ $color-stack:
         background-size: contain;
     }
 }
+.datepicker {
+    box-shadow: 1px 1px 4px 5px rgba(0, 0, 0, 0.03);
+    border-radius: 25px;
+    border: none;
+    .datepicker--pointer {
+        display: none;
+    }
+    .datepicker--nav-title,
+    .datepicker--nav-title i {
+        font-family: $fontPage;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+        color: #000000;
+        &:hover {
+            border-radius: 10px;
+            background: rgba(127, 161, 248, 0.2);
+        }
+    }
+    .datepicker--nav-action {
+        &:hover {
+            border-radius: 10px;
+            background: rgba(127, 161, 248, 0.2);
+        }
+        path {
+            stroke: #000000;
+        }
+    }
+    .datepicker--cells {
+        border-top: 1px solid #F5F5F7;;
+    }
+    .datepicker--nav {
+        border-bottom: 1px solid #F5F5F7;;
+    }
+    .datepicker--days-names {
+        margin: 3px 0px;
+    }
+    .datepicker--day-name {
+        font-family: $fontPage;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 11px;
+        line-height: 13px;
+        color: #000000;
+    }
+    .datepicker--cell {
+        font-family: $fontPage;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 13px;
+        color: #000000;
+        border-radius: 10px;
+        &.-current- {
+            color: #7FA1F8;
+            font-weight: bold;
+        }
+        &.-selected-,
+        &.-focus- {
+            background: rgba(127, 161, 248, 0.2);
+        }
+    }
+}
 @media screen and (max-width: 1400px) {
     .page-cont {
         .right-side {
