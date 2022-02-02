@@ -2930,7 +2930,15 @@ body {
 }
 
 .pool-wrap .option-comment textarea:focus {
-  border-color: #7FA1F8;
+  border-color: transparent;
+  background-image: -webkit-gradient(linear, left top, right top, from(#B27AF8), to(#7FA1F8));
+  background-image: -webkit-linear-gradient(left, #B27AF8 0%, #7FA1F8 100%);
+  background-image: -o-linear-gradient(left, #B27AF8 0%, #7FA1F8 100%);
+  background-image: linear-gradient(90deg, #B27AF8 0%, #7FA1F8 100%);
+  -webkit-background-size: 100% 1px;
+          background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .pool-wrap .question-list {
@@ -3100,13 +3108,18 @@ body {
   width: 100%;
   border-bottom: 1px solid #E5E5E5;
   resize: none;
-  -webkit-transition: border-color 0.3s ease-in;
-  -o-transition: border-color 0.3s ease-in;
-  transition: border-color 0.3s ease-in;
 }
 
 .pool-wrap .question-wrap .free-answers .answer-wrap textarea:focus {
-  border-color: #7FA2F8;
+  border-color: transparent;
+  background-image: -webkit-gradient(linear, left top, right top, from(#B27AF8), to(#7FA1F8));
+  background-image: -webkit-linear-gradient(left, #B27AF8 0%, #7FA1F8 100%);
+  background-image: -o-linear-gradient(left, #B27AF8 0%, #7FA1F8 100%);
+  background-image: linear-gradient(90deg, #B27AF8 0%, #7FA1F8 100%);
+  -webkit-background-size: 100% 1px;
+          background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .pool-wrap .question-wrap .scale-labels-wrap {
@@ -3466,9 +3479,6 @@ body {
   font-size: 13px;
   line-height: 15px;
   color: #000000;
-  -webkit-transition: border-color 0.3s ease-in;
-  -o-transition: border-color 0.3s ease-in;
-  transition: border-color 0.3s ease-in;
 }
 
 .pool-wrap .question-wrap .name-answers .answer-wrap textarea::-webkit-input-placeholder {
@@ -3492,7 +3502,15 @@ body {
 }
 
 .pool-wrap .question-wrap .name-answers .answer-wrap textarea:focus {
-  border-color: #7FA2F8;
+  border-color: transparent;
+  background-image: -webkit-gradient(linear, left top, right top, from(#B27AF8), to(#7FA1F8));
+  background-image: -webkit-linear-gradient(left, #B27AF8 0%, #7FA1F8 100%);
+  background-image: -o-linear-gradient(left, #B27AF8 0%, #7FA1F8 100%);
+  background-image: linear-gradient(90deg, #B27AF8 0%, #7FA1F8 100%);
+  -webkit-background-size: 100% 1px;
+          background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .pool-wrap .question-wrap .date-answer {
@@ -3515,13 +3533,18 @@ body {
   padding-right: 20px;
   width: 100%;
   cursor: pointer;
-  -webkit-transition: border-color 0.3s ease-in;
-  -o-transition: border-color 0.3s ease-in;
-  transition: border-color 0.3s ease-in;
 }
 
 .pool-wrap .question-wrap .date-answer .date-input:focus {
-  border-color: #7FA2F8;
+  border-color: transparent;
+  background-image: -webkit-gradient(linear, left top, right top, from(#B27AF8), to(#7FA1F8));
+  background-image: -webkit-linear-gradient(left, #B27AF8 0%, #7FA1F8 100%);
+  background-image: -o-linear-gradient(left, #B27AF8 0%, #7FA1F8 100%);
+  background-image: linear-gradient(90deg, #B27AF8 0%, #7FA1F8 100%);
+  -webkit-background-size: 100% 1px;
+          background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .pool-wrap .question-wrap .date-answer .icon-date {
@@ -3613,13 +3636,18 @@ body {
   padding-bottom: 8px;
   width: 100%;
   max-width: 500px;
-  -webkit-transition: border-color 0.3s ease-in;
-  -o-transition: border-color 0.3s ease-in;
-  transition: border-color 0.3s ease-in;
 }
 
 .pool-wrap .question-wrap .email-answer input:focus {
-  border-color: #7FA2F8;
+  border-color: transparent;
+  background-image: -webkit-gradient(linear, left top, right top, from(#B27AF8), to(#7FA1F8));
+  background-image: -webkit-linear-gradient(left, #B27AF8 0%, #7FA1F8 100%);
+  background-image: -o-linear-gradient(left, #B27AF8 0%, #7FA1F8 100%);
+  background-image: linear-gradient(90deg, #B27AF8 0%, #7FA1F8 100%);
+  -webkit-background-size: 100% 1px;
+          background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .pool-wrap .question-wrap .email-answer input::-webkit-input-placeholder {
@@ -3764,13 +3792,18 @@ body {
   font-size: 13px;
   line-height: 15px;
   color: #000000;
-  -webkit-transition: border-color 0.3s ease-in;
-  -o-transition: border-color 0.3s ease-in;
-  transition: border-color 0.3s ease-in;
 }
 
 .pool-wrap .question-wrap .phone:focus {
-  border-color: #7FA2F8;
+  border-color: transparent;
+  background-image: -webkit-gradient(linear, left top, right top, from(#B27AF8), to(#7FA1F8));
+  background-image: -webkit-linear-gradient(left, #B27AF8 0%, #7FA1F8 100%);
+  background-image: -o-linear-gradient(left, #B27AF8 0%, #7FA1F8 100%);
+  background-image: linear-gradient(90deg, #B27AF8 0%, #7FA1F8 100%);
+  -webkit-background-size: 100% 1px;
+          background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 .pool-wrap .question-wrap .file-answer label {

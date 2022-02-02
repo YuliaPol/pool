@@ -2120,7 +2120,11 @@ body {
                 color: #000000;
             }
             &:focus {
-                border-color: $switchBg;
+                border-color: transparent;
+                background-image: $gradient;
+                background-size: 100% 1px;
+                background-repeat: no-repeat;
+                background-position: bottom;
             }
         }
     }
@@ -2247,9 +2251,12 @@ body {
                     width: 100%;
                     border-bottom: 1px solid #E5E5E5;
                     resize: none;
-                    transition: border-color 0.3s ease-in;
                     &:focus {
-                        border-color: #7FA2F8;
+                        border-color: transparent;
+                        background-image: $gradient;
+                        background-size: 100% 1px;
+                        background-repeat: no-repeat;
+                        background-position: bottom;
                     }
                 }
             }
@@ -2552,12 +2559,15 @@ body {
                     font-size: 13px;
                     line-height: 15px;
                     color: #000000;
-                    transition: border-color 0.3s ease-in;
                     &::placeholder {
                         color: #000000;
                     }
                     &:focus {
-                        border-color: #7FA2F8;
+                        border-color: transparent;
+                        background-image: $gradient;
+                        background-size: 100% 1px;
+                        background-repeat: no-repeat;
+                        background-position: bottom;
                     }
                 }
             }
@@ -2580,9 +2590,12 @@ body {
                 padding-right: 20px;
                 width: 100%;
                 cursor: pointer;
-                transition: border-color 0.3s ease-in;
                 &:focus {
-                    border-color: #7FA2F8;
+                    border-color: transparent;
+                    background-image: $gradient;
+                    background-size: 100% 1px;
+                    background-repeat: no-repeat;
+                    background-position: bottom;
                 }
             }
             .icon-date {
@@ -2655,9 +2668,12 @@ body {
                 padding-bottom: 8px;
                 width: 100%;
                 max-width: 500px;
-                transition: border-color 0.3s ease-in;
                 &:focus {
-                    border-color: #7FA2F8;
+                    border-color: transparent;
+                    background-image: $gradient;
+                    background-size: 100% 1px;
+                    background-repeat: no-repeat;
+                    background-position: bottom;
                 }
                 &::placeholder {
                     color: #000000;
@@ -2761,9 +2777,12 @@ body {
             font-size: 13px;
             line-height: 15px;
             color: #000000;
-            transition: border-color 0.3s ease-in;
             &:focus {
-                border-color: #7FA2F8;
+                border-color: transparent;
+                background-image: $gradient;
+                background-size: 100% 1px;
+                background-repeat: no-repeat;
+                background-position: bottom;
             }
         }
         .file-answer {
