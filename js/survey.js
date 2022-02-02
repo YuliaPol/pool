@@ -280,6 +280,23 @@ jQuery(function ($) {
             }
         });
 
+        $('.pool-wrap').on('click', '.question-wrap input[type=radio]', function(e){
+            let $radio = $(this)
+            
+            if($radio.prop('checked')){
+                if ($radio.attr('data-waschecked') == 'true')
+                {
+                    $radio.prop('checked', false);
+                    $radio.parents('.question-wrap').find('input[type="radio"]').attr('data-waschecked', 'false');
+                }
+                else
+                    $radio.parents('.question-wrap').find('input[type="radio"]').attr('data-waschecked', 'false');
+                    $radio.attr('data-waschecked', 'true');
+            } else {
+                $radio.parents('.question-wrap').find('input[type="radio"]').attr('data-waschecked', 'false');
+            }
+        });
+
         //make audiowave
         $('.audiowave').each(function(){
             var path = $(this).attr('data-audiopath');//path for audio
