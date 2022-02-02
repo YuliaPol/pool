@@ -2128,7 +2128,55 @@ body {
             }
         }
     }
-    .question-list {
+    .thanks-wrap {
+        min-height: 100%;
+        padding-bottom: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: column;
+        .text-big {
+            font-family: $fontPage;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 44px;
+            color: #37353F;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+        .text {
+            font-family: $fontPage;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 27px;
+            color: #37353F;
+            text-align: center;
+        }
+        .link-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 10%;
+            .link-item {
+                display: inline-block;
+                text-decoration: none;
+                outline: none;
+                padding: 15px 50px;
+                border-radius: 25px;
+                background: $gradient;
+                font-family: $fontPage;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 11px;
+                line-height: 13px;
+                color: #FFFFFF;
+            }
+        }
+    }
+    .question-list,
+    .thanks-wrap {
         position: relative;
         z-index: 100;
         background: #FFFFFF;
@@ -3543,6 +3591,39 @@ $color-stack:
             
         }
     }
+    .content-wrap {
+        margin-top: 70px;
+        min-height: calc(100vh - 70px);
+        &.survey-page {
+            .survey-footer {
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+            .pool-wrap {
+                height: calc(100vh - 150px);
+            }
+        }
+    }
+    .pool-wrap {
+        .thanks-wrap {
+            padding-bottom: 50px;
+            .thanks-text {
+                max-width: 80%;
+            }
+            .link-wrap {
+                padding-top: 80px;
+            }
+            .text-big {
+                font-size: 24px;
+                line-height: 32px;
+                padding-bottom: 15px;
+            }
+            .text {
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+    }
 }
 @media screen and (max-width: 1150px) {
     .page-cont {
@@ -3603,7 +3684,8 @@ $color-stack:
                 line-height: 18px;
                 padding-bottom: 40px;
             }
-            .question-list {
+            .question-list,
+            .thanks-wrap {
                 padding: 10px 0px;
                 padding-bottom: 40px;
             }
@@ -3756,6 +3838,10 @@ $color-stack:
             }
             .pool-wrap {
                 margin-top: 0px;
+                .thanks-wrap {
+                    padding-left: 10px;
+                    padding-right: 10px;                    
+                }
                 .question-list {
                     padding-left: 10px;
                     padding-right: 10px;

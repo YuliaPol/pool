@@ -79,7 +79,7 @@ jQuery(function ($) {
             let question = $(this).parents('.question-wrap');
             let text = $(this).val();
             let index = $(this).parents('.answer-wrap').index() + 1;
-            let length = $(this).parents('.free-answers').children().lenght;
+            let length = $(this).parents('.free-answers').children().length;
             if(!text && index !== length) {
                 $(this).parents('.answer-wrap').remove();
                 refreshFreeList(question);
