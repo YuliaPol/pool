@@ -399,6 +399,15 @@ body {
             height: 80px;
             .notification-cont {
                 padding-left: 20px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                position: relative;
+                &:hover {
+                    .exit-wrap {
+                        opacity: 1;
+                        pointer-events: all;
+                    }
+                }
                 .notification-icon {
                     position: relative;
                     display: block;
@@ -424,6 +433,79 @@ body {
                         &::before {
                             opacity: 1;
                         }
+                    }
+                }
+                .exit-wrap {
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: opacity 0.3s ease-in;
+                    position: absolute;
+                    top: 65px;
+                    right: 0px;
+                    width: 215px;
+                    padding: 15px 25px;
+                    background: #FFFFFF;
+                    box-shadow: 1px 1px 4px 5px rgba(0, 0, 0, 0.03);
+                    border-radius: 25px;
+                    &:hover {
+                        background: rgb(229, 236, 254);
+                        .exit-icon {
+                            &::before {
+                                opacity: 0;
+                            }
+                            &::after {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        text-decoration: none;
+                        color: inherit;
+                    }
+                    .exit-icon {
+                        width: 15px;
+                        height: 15px;
+                        position: relative;
+                        &::before {
+                            content: "";
+                            background: url(./../img/icon-exit.svg);
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            right: 0px;
+                            bottom: 0px;
+                            opacity: 1;
+                            transition: opacity 0.3s ease-in;
+                        }
+                        &::after {
+                            content: "";
+                            background: url(./../img//icon-exit-a.svg);
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            right: 0px;
+                            bottom: 0px;
+                            opacity: 0;
+                            transition: opacity 0.3s ease-in;
+                        }
+                    }
+                    .exit-text {
+                        font-family: $fontPage;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 13px;
+                        line-height: 15px;
+                        color: #000000;
+                        padding-left: 18px;
                     }
                 }
             }
@@ -2555,6 +2637,28 @@ body {
             & > label {
                 width: calc(50% - 10px);
                 max-width: calc(50% - 10px);
+            }
+            input[type=radio] {
+                display: none;
+                & + label,
+                & ~ label {
+                    &::after {
+                        opacity: 0 !important;
+                    }
+                    &::before {
+                        opacity: 1 !important;
+                    }
+                }
+                &:checked {
+                    & + label {
+                        &::after {
+                            opacity: 1 !important;
+                        }
+                        &::before {
+                            opacity: 0 !important;
+                        }
+                    }
+                }
             }
         }
         .dropdown-wrap {

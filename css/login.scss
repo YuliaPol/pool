@@ -284,6 +284,13 @@ body {
                     color: $errorColor;
                 }
             }
+            .login-error {
+                padding-top: 20px;
+                font-family: $fontPage;
+                font-size: 14px;
+                line-height: 18px;
+                color: $errorColor;
+            }
             .btn-cont {
                 padding-bottom: 20px;
             }

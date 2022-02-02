@@ -556,6 +556,14 @@ body {
 
 .page-cont .right-side .top-panel .notification-cont {
   padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.page-cont .right-side .top-panel .notification-cont:hover .exit-wrap {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .page-cont .right-side .top-panel .notification-cont .notification-icon {
@@ -587,6 +595,104 @@ body {
 
 .page-cont .right-side .top-panel .notification-cont .notification-icon.active::before {
   opacity: 1;
+}
+
+.page-cont .right-side .top-panel .notification-cont .exit-wrap {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.3s ease-in;
+  -o-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+  position: absolute;
+  top: 65px;
+  right: 0px;
+  width: 215px;
+  padding: 15px 25px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 1px 1px 4px 5px rgba(0, 0, 0, 0.03);
+          box-shadow: 1px 1px 4px 5px rgba(0, 0, 0, 0.03);
+  border-radius: 25px;
+}
+
+.page-cont .right-side .top-panel .notification-cont .exit-wrap:hover {
+  background: #e5ecfe;
+}
+
+.page-cont .right-side .top-panel .notification-cont .exit-wrap:hover .exit-icon::before {
+  opacity: 0;
+}
+
+.page-cont .right-side .top-panel .notification-cont .exit-wrap:hover .exit-icon::after {
+  opacity: 1;
+}
+
+.page-cont .right-side .top-panel .notification-cont .exit-wrap a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-decoration: none;
+  color: inherit;
+}
+
+.page-cont .right-side .top-panel .notification-cont .exit-wrap .exit-icon {
+  width: 15px;
+  height: 15px;
+  position: relative;
+}
+
+.page-cont .right-side .top-panel .notification-cont .exit-wrap .exit-icon::before {
+  content: "";
+  background: url(./../img/icon-exit.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease-in;
+  -o-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+}
+
+.page-cont .right-side .top-panel .notification-cont .exit-wrap .exit-icon::after {
+  content: "";
+  background: url(./../img//icon-exit-a.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in;
+  -o-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+}
+
+.page-cont .right-side .top-panel .notification-cont .exit-wrap .exit-text {
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+  padding-left: 18px;
 }
 
 .page-cont .right-side .top-menu {
@@ -3489,6 +3595,28 @@ body {
 .pool-wrap .question-wrap .scale-2 > label {
   width: calc(50% - 10px);
   max-width: calc(50% - 10px);
+}
+
+.pool-wrap .question-wrap .scale-2 input[type=radio] {
+  display: none;
+}
+
+.pool-wrap .question-wrap .scale-2 input[type=radio] + label::after,
+.pool-wrap .question-wrap .scale-2 input[type=radio] ~ label::after {
+  opacity: 0 !important;
+}
+
+.pool-wrap .question-wrap .scale-2 input[type=radio] + label::before,
+.pool-wrap .question-wrap .scale-2 input[type=radio] ~ label::before {
+  opacity: 1 !important;
+}
+
+.pool-wrap .question-wrap .scale-2 input[type=radio]:checked + label::after {
+  opacity: 1 !important;
+}
+
+.pool-wrap .question-wrap .scale-2 input[type=radio]:checked + label::before {
+  opacity: 0 !important;
 }
 
 .pool-wrap .question-wrap .dropdown-wrap {

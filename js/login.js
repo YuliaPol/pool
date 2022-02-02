@@ -62,6 +62,25 @@ jQuery(function ($) {
                 loginInput.addClass('has-error');
             }
         });
+        $('input[type=password]').change(function(e){
+            let password = $(this).val();
+            loginInput = $(this).parents('.login-input');
+            if(password.length > 2){
+                if(loginInput.hasClass('has-error')){
+                    loginInput.removeClass('has-error');
+                    loginInput.find('.error-text').remove();
+                }
+            } else {
+                if(loginInput.find('.error-text').length === 0){
+                    let errorHtml = 
+                    `<div class="error-text">
+                       Пароль слишком короткий
+                    </div>`;
+                    $(errorHtml).appendTo(loginInput);
+                }
+                loginInput.addClass('has-error');
+            }
+        });
         function validForm(){
             var erroreArrayElemnts = [];
             var el = loginForm.find('[data-reqired]');

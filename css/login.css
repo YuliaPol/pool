@@ -420,6 +420,15 @@ body {
   color: #FF7262;
 }
 
+.login-page .login-content .login-form .login-error,
+.login-page .login-content .agreement-form .login-error {
+  padding-top: 20px;
+  font-family: "Gilroy", Verdana, Tahoma, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FF7262;
+}
+
 .login-page .login-content .login-form .btn-cont,
 .login-page .login-content .agreement-form .btn-cont {
   padding-bottom: 20px;
