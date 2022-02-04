@@ -232,6 +232,23 @@ jQuery(function ($) {
         $('.pool-wrap').on('input', '.question-wrap .input-range', function(e){
             setDiapasonValue(this);
         });
+        //set width for input range background
+        function setRangeBackground(){
+            let ranges = $('.input-range');
+            if(ranges.length > 0){
+                for (let i = 0; i < ranges.length; i++) {
+                    let barFilled = $(ranges[i]).parents('.question-wrap').find('.bar-filled');
+                    let barLenght = $(ranges[i]).width();
+                    console.log(barLenght);
+                    barFilled.css('background-size', barLenght + 'px');
+                }
+            }
+        }
+        setRangeBackground();
+        $( window ).resize(function() {
+            console.log('resize');
+            setRangeBackground();
+        });
         //set new diapsson value
         function setDiapasonValue(input){
             var value = $(input).val();
@@ -282,16 +299,16 @@ jQuery(function ($) {
 
         $('.pool-wrap').on('click', '.question-wrap input[type=radio]', function(e){
             let $radio = $(this)
-            
             if($radio.prop('checked')){
-                if ($radio.attr('data-waschecked') == 'true')
-                {
+                let radioGroup = $radio.parents('.question-wrap');
+                radioGroup.find('input[type=radio]').not($radio).prop('checked', false);
+                if ($radio.attr('data-waschecked') == 'true') {
                     $radio.prop('checked', false);
                     $radio.parents('.question-wrap').find('input[type="radio"]').attr('data-waschecked', 'false');
-                }
-                else
+                } else {
                     $radio.parents('.question-wrap').find('input[type="radio"]').attr('data-waschecked', 'false');
                     $radio.attr('data-waschecked', 'true');
+                }
             } else {
                 $radio.parents('.question-wrap').find('input[type="radio"]').attr('data-waschecked', 'false');
             }
@@ -350,13 +367,15 @@ jQuery(function ($) {
                 var erroreArrayElemnts = [];
                 for (var i = 0; i < el.length; i++) {
                     if (el[i].value === '' || el[i].value === ' ' || el[i].value === '-') {
-                        erroreArrayElemnts.push(el[i]);
-                        if($(el[i]).attr('type')=='text' || $(el[i]).attr('type')=='tel' || $(el[i]).attr('type')=='email' || el[i].tagName === 'TEXTAREA'){
-                            $(el[i]).parents('.question-wrap').addClass('has-error');
+                        if($(el[i]).parents('.question-wrap').is(':visible')){
+                            erroreArrayElemnts.push(el[i]);
+                            if($(el[i]).attr('type')=='text' || $(el[i]).attr('type')=='tel' || $(el[i]).attr('type')=='email' || el[i].tagName === 'TEXTAREA'){
+                                $(el[i]).parents('.question-wrap').addClass('has-error');
+                            }
+                            $(el[i]).focus(function (e) {
+                                $(e.target).parents('.question-wrap').removeClass('has-error');
+                            });
                         }
-                        $(el[i]).focus(function (e) {
-                            $(e.target).parents('.question-wrap').removeClass('has-error');
-                        });
                     }
                 }
 
@@ -365,14 +384,16 @@ jQuery(function ($) {
                     if (el[i].tagName === 'INPUT') {
                         var name = el[i].getAttribute('name');
                         if (document.querySelectorAll('[name=' + name + ']:checked').length === 0) {
-                            erroreArrayElemnts.push(el[i]);
-                            if($(el[i]).parents('.question-wrap')){
-                                $(el[i]).parents('.question-wrap').addClass('has-error');
+                            if($(el[i]).parents('.question-wrap').is(':visible')){
+                                erroreArrayElemnts.push(el[i]);
+                                if($(el[i]).parents('.question-wrap')){
+                                    $(el[i]).parents('.question-wrap').addClass('has-error');
+                                }
+                                var inputname = $(el[i]).attr('name');
+                                $('input[name='+ inputname + ']').change(function (e) {
+                                    $(e.target).parents('.question-wrap').removeClass('has-error');
+                                });
                             }
-                            var inputname = $(el[i]).attr('name');
-                            $('input[name='+ inputname + ']').change(function (e) {
-                                $(e.target).parents('.question-wrap').removeClass('has-error');
-                            });
                         }
                     }
                 }
@@ -382,14 +403,16 @@ jQuery(function ($) {
                     if (el[i].tagName === 'INPUT') {
                         var parents = $(el[i]).parents('.question-wrap');
                         if ($(parents).find('input[type=checkbox]:checked').length === 0) {
-                            erroreArrayElemnts.push(el[i]);
-                            if($(el[i]).parents('.question-wrap')){
-                                $(el[i]).parents('.question-wrap').addClass('has-error');
+                            if($(el[i]).parents('.question-wrap').is(':visible')){
+                                erroreArrayElemnts.push(el[i]);
+                                if($(el[i]).parents('.question-wrap')){
+                                    $(el[i]).parents('.question-wrap').addClass('has-error');
+                                }
+                                var inputparent = $(el[i]).parents('.question-wrap');
+                                $(inputparent).on('change', 'input[type=checkbox]', function (e) {
+                                    $(e.target).parents('.question-wrap').removeClass('has-error');
+                                });
                             }
-                            var inputparent = $(el[i]).parents('.question-wrap');
-                            $(inputparent).on('change', 'input[type=checkbox]', function (e) {
-                                $(e.target).parents('.question-wrap').removeClass('has-error');
-                            });
                         }
                     }
                 }
@@ -399,12 +422,14 @@ jQuery(function ($) {
                     if (el[i].tagName === 'INPUT') {
                         var valueRange = $(el[i]).parents('.range').find('.label .value').html();
                         if (valueRange === '' || valueRange === ' ' || valueRange === '-') {
-                            erroreArrayElemnts.push(el[i]);
-                            $(el[i]).parents('.question-wrap').addClass('has-error');
-                            var inputname = $(el[i]).attr('name');
-                            $('input[name='+ inputname + ']').change(function (e) {
-                                $(e.target).parents('.question-wrap').removeClass('has-error');
-                            });
+                            if($(el[i]).parents('.question-wrap').is(':visible')){
+                                erroreArrayElemnts.push(el[i]);
+                                $(el[i]).parents('.question-wrap').addClass('has-error');
+                                var inputname = $(el[i]).attr('name');
+                                $('input[name='+ inputname + ']').change(function (e) {
+                                    $(e.target).parents('.question-wrap').removeClass('has-error');
+                                });
+                            }
                         }
                     }
                 }
@@ -413,11 +438,13 @@ jQuery(function ($) {
                 for (var i = 0; i < el.length; i++) {
                     if (el[i].tagName === 'SELECT') {
                         if (!$(el[i]).val()) {
-                            erroreArrayElemnts.push(el[i]);
-                            $(el[i]).parents('.question-wrap').addClass('has-error');
-                            $(el[i]).change(function (e) {
-                                $(e.target).parents('.question-wrap').removeClass('has-error');
-                            });
+                            if($(el[i]).parents('.question-wrap').is(':visible')){
+                                erroreArrayElemnts.push(el[i]);
+                                $(el[i]).parents('.question-wrap').addClass('has-error');
+                                $(el[i]).change(function (e) {
+                                    $(e.target).parents('.question-wrap').removeClass('has-error');
+                                });
+                            }
                         }
                     }
                 }
@@ -448,9 +475,35 @@ jQuery(function ($) {
                 return false;
             }
         }
-         //only number for phone
-         $('.phone-input').inputFilter(function(value) {
+        //only number for phone
+        $('.phone-input').inputFilter(function(value) {
             return /^-?\+?\d*$/.test(value) && (value === "" || value);
         });
+
+        //crutch for 17 survey
+        let surveyId = $('input[name=survey_id]').val();
+        if(surveyId == '17'){
+            let questions = $('.pool-wrap').find('.question-wrap');
+            let branchQuestion = $(questions[3]);
+            branchQuestion.next().fadeOut(0);
+            branchQuestion.next().next().fadeOut(0);
+            branchQuestion.find('input').change(function(e){
+                if($(this).is(":checked")){
+                    if($(this).val() < 3) {
+                        branchQuestion.next().fadeOut(0);
+                        branchQuestion.next().next().fadeIn(300);                        
+                    } else {
+                        branchQuestion.next().fadeIn(300);
+                        branchQuestion.next().next().fadeOut(0);
+                    }
+                }
+            });
+        }
     });
 });
+const appHeight = () => {
+    const doc = document.documentElement
+    doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+}
+window.addEventListener('resize', appHeight)
+appHeight()

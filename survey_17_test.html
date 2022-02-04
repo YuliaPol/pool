@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Название опроса</title>
+
+    <link rel="stylesheet" href="./font/Gilroy/stylesheet.css">
+    <link rel="stylesheet" href="./css/jquery-ui.css">
+    <link rel="stylesheet" href="./css/custom-select.css">
+    <link rel="stylesheet" href="./css/datepicker.min.css">
+    <link rel="stylesheet" href="./css/intlTelInput.css">
+    <link rel="stylesheet" href="./css/style.css?7656457879">
+
+    <script src="./js/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <div class="page-wrap">
+        <div class="content-wrap survey-page">
+            <div class="pool-wrap">
+                <div class="pool-bg" style="background-image: url('https://poolcomment.com/frontend/web/img/survey/j-4WXQ8PDmI.jpg');"></div>
+                <div class="progress-bar">
+                    <div class="progress-wrap">
+                        <div class="proggres">
+                        </div>
+                    </div>
+                </div>
+                <div class="question-list">
+                    <h1 class="survey-name">
+                        Название опроса
+                    </h1>
+                    <p class="survey-descr">
+                        Описание опроса. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                        praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+                        occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi,
+                        id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam
+                        libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod
+                        maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+                        Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et
+                        voluptates repudiandae sint et molestiae non recusandae.
+                    </p>
+                    <form action="#" class="form-valid" method="post">
+                        <input type="hidden" name="survey_name" value="Анкета удовлетворенности мероприятием">
+                        <input type="hidden" name="survey_id" value="17">
+
+                        <div class="question-wrap question-single" data-id="1">
+                            <div class="question-name"> 1. Что повлияло на ваше решение принять участие в мероприятии?
+                            </div>
+
+                            <input type="hidden" name="question_1"
+                                value="1. Что повлияло на ваше решение принять участие в мероприятии? ">
+
+                            <div class="radio-btns-wrapper">
+
+                                <div class="radio-item">
+                                    <input type="checkbox" name="single_1_1" id="q-1-1"
+                                        value="Уникальная концепция мероприятия" data-reqired="reqired">
+                                    <label for="q-1-1">
+                                        Уникальная концепция мероприятия </label>
+                                </div>
+
+
+                                <div class="radio-item">
+                                    <input type="checkbox" name="single_1_2" id="q-1-2" value="Заинтересовала выставка"
+                                        data-reqired="reqired">
+                                    <label for="q-1-2">
+                                        Заинтересовала выставка </label>
+                                </div>
+
+
+                                <div class="radio-item">
+                                    <input type="checkbox" name="single_1_3" id="q-1-3"
+                                        value="Деловая Программа мероприятия (ради выступлений спикеров)"
+                                        data-reqired="reqired">
+                                    <label for="q-1-3">
+                                        Деловая Программа мероприятия (ради выступлений спикеров) </label>
+                                </div>
+
+
+                                <div class="radio-item">
+                                    <input type="checkbox" name="single_1_4" id="q-1-4"
+                                        value="Желание пообщаться в профессиональной среде" data-reqired="reqired">
+                                    <label for="q-1-4">
+                                        Желание пообщаться в профессиональной среде </label>
+                                </div>
+
+
+                                <div class="radio-item">
+                                    <input type="checkbox" name="single_1_5" id="q-1-5"
+                                        value="Возможность завести новые деловые контакты для продвижения своего продукта"
+                                        data-reqired="reqired">
+                                    <label for="q-1-5">
+                                        Возможность завести новые деловые контакты для продвижения своего продукта
+                                    </label>
+                                </div>
+
+
+                                <div class="radio-item">
+                                    <input type="checkbox" name="single_1_6" id="q-1-6" value="Другое"
+                                        data-reqired="reqired">
+                                    <label for="q-1-6">
+                                        Другое </label>
+                                </div>
+
+                            </div>
+
+                            <div class="option-comment">
+                                <textarea name="single-comment_1_7" rows="1" placeholder="Введите ваш комментарий"
+                                    style="overflow: hidden; height: 22px;"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="question-wrap question-single" data-id="1">
+                            <div class="question-name"> 2. Как Вы узнали о мероприятии? </div>
+
+                            <input type="hidden" name="question_2" value="2. Как Вы узнали о мероприятии? ">
+
+                            <div class="radio-btns-wrapper">
+
+                                <div class="radio-item">
+                                    <input type="radio" name="single_2_1" id="q-2-1"
+                                        value="Рекомендация друзей / знакомых /коллег" data-reqired="">
+                                    <label for="q-2-1">
+                                        Рекомендация друзей / знакомых /коллег </label>
+                                </div>
+
+
+                                <div class="radio-item">
+                                    <input type="radio" name="single_2_2" id="q-2-2" value="Приглашение организаторов"
+                                        data-reqired="">
+                                    <label for="q-2-2">
+                                        Приглашение организаторов </label>
+                                </div>
+
+
+                                <div class="radio-item">
+                                    <input type="radio" name="single_2_3" id="q-2-3" value="Распоряжение руководителя"
+                                        data-reqired="">
+                                    <label for="q-2-3">
+                                        Распоряжение руководителя </label>
+                                </div>
+
+
+                                <div class="radio-item">
+                                    <input type="radio" name="single_2_4" id="q-2-4" value="Инстаграм" data-reqired="">
+                                    <label for="q-2-4">
+                                        Инстаграм </label>
+                                </div>
+
+
+                                <div class="radio-item">
+                                    <input type="radio" name="single_2_5" id="q-2-5" value="Фейсбук" data-reqired="">
+                                    <label for="q-2-5">
+                                        Фейсбук </label>
+                                </div>
+
+
+                                <div class="radio-item">
+                                    <input type="radio" name="single_2_6" id="q-2-6" value="Реклама в браузере "
+                                        data-reqired="">
+                                    <label for="q-2-6">
+                                        Реклама в браузере </label>
+                                </div>
+
+
+                                <div class="radio-item">
+                                    <input type="radio" name="single_2_7" id="q-2-7" value="Другое" data-reqired="">
+                                    <label for="q-2-7">
+                                        Другое </label>
+                                </div>
+
+                            </div>
+
+                            <div class="option-comment">
+                                <textarea name="single-comment_2_8" rows="1" placeholder="Введите ваш комментарий"
+                                    style="overflow: hidden; height: 22px;"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="question-wrap question-single" data-id="1">
+                            <div class="question-name"> 3. Какое количество времени вы провели на мероприятии? </div>
+
+                            <input type="hidden" name="question_3"
+                                value="3. Какое количество времени вы провели на мероприятии?">
+
+                            <div class="radio-btns-wrapper">
+
+                                <div class="radio-item">
+                                    <input type="radio" name="single_3_1" id="q-3-1" value="Менее часа" data-reqired="">
+                                    <label for="q-3-1">
+                                        Менее часа </label>
+                                </div>
+
+
+                                <div class="radio-item">
+                                    <input type="radio" name="single_3_2" id="q-3-2" value="1-2 часа" data-reqired="">
+                                    <label for="q-3-2">
+                                        1-2 часа </label>
+                                </div>
+
+
+                                <div class="radio-item">
+                                    <input type="radio" name="single_3_3" id="q-3-3" value="3-5 часов" data-reqired="">
+                                    <label for="q-3-3">
+                                        3-5 часов </label>
+                                </div>
+
+
+                                <div class="radio-item">
+                                    <input type="radio" name="single_3_4" id="q-3-4" value="6-8 часов" data-reqired="">
+                                    <label for="q-3-4">
+                                        6-8 часов </label>
+                                </div>
+
+
+                                <div class="radio-item">
+                                    <input type="radio" name="single_3_5" id="q-3-5" value="Более 8 часов"
+                                        data-reqired="">
+                                    <label for="q-3-5">
+                                        Более 8 часов </label>
+                                </div>
+
+                            </div>
+
+                            <div class="option-comment">
+                                <textarea name="single-comment_3_6" rows="1" placeholder="Введите ваш комментарий"
+                                    style="overflow: hidden; height: 22px;"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="question-wrap question-scale" data-id="1">
+                            <div class="question-name"> 4. Насколько вы остались довольны организацией мероприятия?
+                            </div>
+
+                            <input type="hidden" name="question_4"
+                                value="4. Насколько вы остались довольны организацией мероприятия?">
+
+
+
+                            <div class="scale-wrap scale-face scale-4">
+
+                                <input type="radio" id="q-4-4" name="scale_4_4" value="4">
+                                <label for="q-4-4" title="text"></label>
+
+                                <input type="radio" id="q-4-3" name="scale_4_3" value="3">
+                                <label for="q-4-3" title="text"></label>
+
+                                <input type="radio" id="q-4-2" name="scale_4_2" value="2">
+                                <label for="q-4-2" title="text"></label>
+
+                                <input type="radio" id="q-4-1" name="scale_4_1" value="1">
+                                <label for="q-4-1" title="text"></label>
+                            </div>
+
+                            <div class="scale-labels-wrap scale-4">
+
+
+                                <div class="label-item">Совсем не доволен</div>
+
+
+                                <div class="label-item">Скорее не доволен</div>
+
+
+                                <div class="label-item">Скорее доволен, чем нет</div>
+
+
+                                <div class="label-item">Полностью доволен</div>
+
+                            </div>
+                        </div>
+
+                        <div class="question-wrap question-free" data-id="1">
+
+                            <div class="question-name"> 5. Уточните, пожалуйста, что особенно Вам понравилось в
+                                организации мероприятия? </div>
+
+
+                            <input type="hidden" name="question_5"
+                                value="5. Уточните, пожалуйста, что особенно Вам понравилось в организации мероприятия?">
+
+                            <div class="free-answers">
+                                <div class="answer-wrap">
+                                    <textarea name="free-answer-comment_5_1" rows="1"
+                                        placeholder="Введите ваш комментарий" data-reqired="reqired"
+                                        style="overflow: hidden; height: 25px;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="question-wrap question-free" data-id="1">
+
+                            <div class="question-name"> 6. Как вы считаете, что мы могли бы улучшить в организации
+                                мероприятия в будущем? </div>
+
+
+                            <input type="hidden" name="question_6"
+                                value="6. Как вы считаете, что мы могли бы улучшить в организации мероприятия в будущем?">
+
+                            <div class="free-answers">
+                                <div class="answer-wrap">
+                                    <textarea name="free-answer-comment_6_1" rows="1"
+                                        placeholder="Введите ваш комментарий" data-reqired="reqired"
+                                        style="overflow: hidden; height: 25px;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="question-wrap question-single" data-id="1">
+                            <div class="question-name"> 7. Какие у вас были цели и ожидания от мероприятия? </div>
+
+                            <input type="hidden" name="question_7"
+                                value="7. Какие у вас были цели и ожидания от мероприятия?">
+
+                            <div class="radio-btns-wrapper">
+
+                                <div class="radio-item">
+                                    <input type="radio" name="single_7_1" id="q-7-1" value="Не было особых ожиданий"
+                                        data-reqired="">
+                                    <label for="q-7-1">
+                                        Не было особых ожиданий </label>
+                                </div>
+
+                            </div>
+
+                            <div class="option-comment">
+                                <textarea name="single-comment_7_2" rows="1" placeholder="Введите ваш комментарий"
+                                    style="overflow: hidden; height: 22px;"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="question-wrap question-scale" data-id="1">
+                            <div class="question-name"> 8. Оправдались ли ваши ожидания от мероприятия в целом? </div>
+
+                            <input type="hidden" name="question_8"
+                                value="8. Оправдались ли ваши ожидания от мероприятия в целом?">
+
+
+
+                            <div class="scale-wrap scale-heart scale-5">
+
+                                <input type="radio" id="q-8-5" name="scale_8_5" value="5">
+                                <label for="q-8-5" title="text"></label>
+
+                                <input type="radio" id="q-8-4" name="scale_8_4" value="4">
+                                <label for="q-8-4" title="text"></label>
+
+                                <input type="radio" id="q-8-3" name="scale_8_3" value="3">
+                                <label for="q-8-3" title="text"></label>
+
+                                <input type="radio" id="q-8-2" name="scale_8_2" value="2">
+                                <label for="q-8-2" title="text"></label>
+
+                                <input type="radio" id="q-8-1" name="scale_8_1" value="1">
+                                <label for="q-8-1" title="text"></label>
+                            </div>
+
+                            <div class="scale-labels-wrap scale-5">
+
+
+                                <div class="label-item">Абсолютно не оправдались</div>
+
+
+                                <div class="label-item">Скорее не оправдались</div>
+
+
+                                <div class="label-item">Скорее оправдались</div>
+
+
+                                <div class="label-item">Однозначно оправдались</div>
+
+
+                                <div class="label-item">Мероприятие превзошло мои ожидания</div>
+
+                            </div>
+                        </div>
+
+                        <div class="question-wrap question-scale" data-id="1">
+                            <div class="question-name"> 9. Насколько вероятно, что Вы порекомендуете посетить данное
+                                мероприятие своим друзьям / коллегам? </div>
+
+                            <input type="hidden" name="question_9"
+                                value="9. Насколько вероятно, что Вы порекомендуете посетить данное мероприятие своим друзьям / коллегам?">
+
+
+
+                            <div class="diapason-answer">
+                                <div class="diapason">
+                                    <div class="label">
+                                        <div class="value">0</div>
+                                    </div>
+                                    <div class="input-box">
+                                        <input class="input-range" name="scale_9_1" type="range" min="1" max="10"
+                                            step="1" value="0" data-reqired="reqired">
+                                        <div class="bar"></div>
+                                        <div class="bar-filled"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="scale-labels-wrap scale-10">
+
+                            </div>
+                        </div>
+
+                        <div class="question-wrap question-free" data-id="1">
+
+                            <div class="question-name"> 10. Ваши предложения по дальнейшему развитию мероприятия? </div>
+
+
+                            <input type="hidden" name="question_10"
+                                value="10. Ваши предложения по дальнейшему развитию мероприятия? ">
+
+                            <div class="free-answers">
+                                <div class="answer-wrap">
+                                    <textarea name="free-answer-comment_10_1" rows="1"
+                                        placeholder="Введите ваш комментарий" data-reqired="reqired"
+                                        style="overflow: hidden; height: 25px;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="question-wrap question-scale" data-id="1">
+                            <div class="question-name"> <a
+                                    href="https://docs.google.com/forms/d/e/1FAIpQLSd-fFLcgigmRUT29VRxcssCIHNI97Xh8gMQtpusm_rSP2tyBw/viewform">11.
+                                    Придете к нам в гости на презентацию летней коллекции 28 апреля? </a> </div>
+
+                            <input type="hidden" name="question_11"
+                                value="11. Придете к нам в гости на презентацию летней коллекции 28 апреля? ">
+
+
+
+                            <div class="scale-wrap scale-star scale-2">
+
+                                <input type="radio" id="q-11-2" name="scale_11_2" value="13">
+                                <label for="q-11-2" title="text"></label>
+
+                                <input type="radio" id="q-11-1" name="scale_11_1" value="12">
+                                <label for="q-11-1" title="text"></label>
+                            </div>
+
+                            <div class="scale-labels-wrap scale-2">
+                                <div class="label-item">Нет</div>
+                                <div class="label-item">Да</div>
+                            </div>
+                        </div>
+                        <div class="btn-wrap">
+                            <button class="valid-form-send btn-default">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="survey-footer">
+                    <div class="logo">
+                        <img src="./img/logo-long.svg" alt="Poolcomment">
+                    </div>
+                    <div class="logo-company">
+                        <img src="./img/logo_bel.png" alt="Содружество беларусь">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="load-wrapper">
+        <div class="loader"></div>
+    </div>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/jquery.ui.touch-punch.min.js"></script>
+    <script src="./js/datepicker.min.js"></script>
+    <script src="./js/custom_select.js"></script>
+    <script src="./js/wavesurfer.min.js"></script>
+    <script src="./js/video-radio-star.js"></script>
+    <script src="./js/intlTelInput.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/survey.js?6778987"></script>
+</body>
+
+</html>
