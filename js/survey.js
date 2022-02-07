@@ -246,7 +246,6 @@ jQuery(function ($) {
         }
         setRangeBackground();
         $( window ).resize(function() {
-            console.log('resize');
             setRangeBackground();
         });
         //set new diapsson value
@@ -258,7 +257,7 @@ jQuery(function ($) {
             var relvalue = value - min;
             var percent = (100/range)*relvalue;
             var parents = $(input).parents('.diapason');
-            var paddleft = (30*percent)/100;
+            var paddleft = (60*percent)/100;
             parents.find('.label').css('left', 'calc(' + percent + '% - ' + paddleft + 'px)');
             parents.find('.label .value').html(value);
             parents.find('.input-box .bar-filled').css('width', percent + '%');
@@ -300,8 +299,6 @@ jQuery(function ($) {
         $('.pool-wrap').on('click', '.question-wrap input[type=radio]', function(e){
             let $radio = $(this)
             if($radio.prop('checked')){
-                let radioGroup = $radio.parents('.question-wrap');
-                radioGroup.find('input[type=radio]').not($radio).prop('checked', false);
                 if ($radio.attr('data-waschecked') == 'true') {
                     $radio.prop('checked', false);
                     $radio.parents('.question-wrap').find('input[type="radio"]').attr('data-waschecked', 'false');
