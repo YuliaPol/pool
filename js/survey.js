@@ -306,6 +306,8 @@ jQuery(function ($) {
         $('.pool-wrap').on('click', '.question-wrap input[type=radio]', function(e){
             let $radio = $(this)
             if($radio.prop('checked')){
+                let radioGroup = $radio.parents('.question-wrap');
+                radioGroup.find('input[type=radio]').not($radio).prop('checked', false);
                 if ($radio.attr('data-waschecked') == 'true') {
                     $radio.prop('checked', false);
                     $radio.parents('.question-wrap').find('input[type="radio"]').attr('data-waschecked', 'false');
@@ -373,12 +375,18 @@ jQuery(function ($) {
                     if (el[i].value === '' || el[i].value === ' ' || el[i].value === '-') {
                         if($(el[i]).parents('.question-wrap').is(':visible')){
                             erroreArrayElemnts.push(el[i]);
-                            if($(el[i]).attr('type')=='text' || $(el[i]).attr('type')=='tel' || $(el[i]).attr('type')=='email' || el[i].tagName === 'TEXTAREA'){
+                            if($(el[i]).attr('type')=='text' || $(el[i]).attr('type')=='tel' || $(el[i]).attr('type')=='email' || el[i].tagName === 'TEXTAREA' || $(el[i]).attr('type') === 'file'){
                                 $(el[i]).parents('.question-wrap').addClass('has-error');
                             }
-                            $(el[i]).focus(function (e) {
-                                $(e.target).parents('.question-wrap').removeClass('has-error');
-                            });
+                            if($(el[i]).attr('type') === 'file'){
+                                $(el[i]).change(function (e) {
+                                    $(e.target).parents('.question-wrap').removeClass('has-error');
+                                });
+                            } else {
+                                $(el[i]).focus(function (e) {
+                                    $(e.target).parents('.question-wrap').removeClass('has-error');
+                                });
+                            }
                         }
                     }
                 }
@@ -441,7 +449,21 @@ jQuery(function ($) {
                 var el = document.querySelectorAll('.form-valid select[data-reqired=reqired]');
                 for (var i = 0; i < el.length; i++) {
                     if (el[i].tagName === 'SELECT') {
-                        console.log($(el[i]).val());
+                        if ($(el[i]).val().length === 0) {
+                            if($(el[i]).parents('.question-wrap').is(':visible')){
+                                erroreArrayElemnts.push(el[i]);
+                                $(el[i]).parents('.question-wrap').addClass('has-error');
+                                $(el[i]).change(function (e) {
+                                    $(e.target).parents('.question-wrap').removeClass('has-error');
+                                });
+                            }
+                        }
+                    }
+                }
+
+                var el = document.querySelectorAll('.form-valid input[type=range][data-reqired=reqired]');
+                for (var i = 0; i < el.length; i++) {
+                    if (el[i].tagName === 'SELECT') {
                         if ($(el[i]).val().length === 0) {
                             if($(el[i]).parents('.question-wrap').is(':visible')){
                                 erroreArrayElemnts.push(el[i]);
@@ -456,7 +478,7 @@ jQuery(function ($) {
 
                 var phones = document.querySelectorAll('.form-valid .phone');
                 for (var i = 0; i < phones.length; i++) {
-                    if ($(phones[i]).val().length > 0 && validatePhone($(phones[i]).val())) {
+                    if ($(phones[i]).val().length > 0 && !validatePhone($(phones[i]).val())) {
                         if($(phones[i]).parents('.question-wrap').is(':visible')){
                             erroreArrayElemnts.push(phones[i]);
                         }
@@ -465,7 +487,7 @@ jQuery(function ($) {
 
                 var emails = document.querySelectorAll('.form-valid input[type=email]');
                 for (var i = 0; i < emails.length; i++) {
-                    if ($(emails[i]).val().length > 0 && isEmail($(emails[i]).val())) {
+                    if ($(emails[i]).val().length > 0 && !isEmail($(emails[i]).val())) {
                         if($(emails[i]).parents('.question-wrap').is(':visible')){
                             erroreArrayElemnts.push(emails[i]);
                         }
