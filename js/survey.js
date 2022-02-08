@@ -136,13 +136,16 @@ jQuery(function ($) {
         //settings for date question
         function setDatePicker(){
             $('.date-input').datepicker({
+                language: "ru",
                 gotoCurrent: true,
                 showOtherMonths: false,
                 altFormat: "mm.dd.yyyy",
                 dateFormat: "mm.dd.yyyy",
-                autoClose: true,
-                onSelect: function(date, inst, obj){
-                    let dateAnswer = obj.$el.parents('.date-answer')
+                autoclose: true,
+                todayHighlight: true,
+            }).on('changeDate', function(ev){
+                if($(ev.currentTarget).parents('.question-datedynamic').length > 0){
+                    let dateAnswer = $(ev.currentTarget).parents('.date-answer');
                     if(dateAnswer.is(':last-child')){
                         dateAnswer.addClass('picked-date');
                         let removeHtml = `<div class="btn-remove-date"></div>`;
@@ -157,9 +160,10 @@ jQuery(function ($) {
                             </div>`
                         $(newInputHtml).appendTo(dateList);
                         setDatePicker();
-                    }
-                },
+                    }  
+                }
             });
+            $('.date-input').mask('00.00.0000');
         }
         setDatePicker();
         //delete date input
@@ -239,7 +243,6 @@ jQuery(function ($) {
                 for (let i = 0; i < ranges.length; i++) {
                     let barFilled = $(ranges[i]).parents('.question-wrap').find('.bar-filled');
                     let barLenght = $(ranges[i]).width();
-                    console.log(barLenght);
                     barFilled.css('background-size', barLenght + 'px');
                 }
             }
@@ -264,9 +267,13 @@ jQuery(function ($) {
             parents.find('.label').css('background-position', percent + '%');
         };
 
+        //when page is scrolled
         $('.pool-wrap .question-list').scroll(function(e){
             setScrollWisth();
+            $('.date-input').datepicker('hide');
+            $('.date-input').blur();
         });
+        //width of scroling line
         function setScrollWisth(){
             let box = $('.pool-wrap .question-list');
             let curScroll = box.scrollTop();
@@ -282,7 +289,7 @@ jQuery(function ($) {
             }
         }
         setScrollWisth();
-
+        // play video
         $('.pool-wrap').on('click', '.video-wrap video', function(e){
             e.preventDefault();
             let videoWrap = $(this).parent();
@@ -295,7 +302,7 @@ jQuery(function ($) {
                 $(video).prop('controls', false);
             }
         });
-
+        //unchecked radio buttin
         $('.pool-wrap').on('click', '.question-wrap input[type=radio]', function(e){
             let $radio = $(this)
             if($radio.prop('checked')){
@@ -434,7 +441,8 @@ jQuery(function ($) {
                 var el = document.querySelectorAll('.form-valid select[data-reqired=reqired]');
                 for (var i = 0; i < el.length; i++) {
                     if (el[i].tagName === 'SELECT') {
-                        if (!$(el[i]).val()) {
+                        console.log($(el[i]).val());
+                        if ($(el[i]).val().length === 0) {
                             if($(el[i]).parents('.question-wrap').is(':visible')){
                                 erroreArrayElemnts.push(el[i]);
                                 $(el[i]).parents('.question-wrap').addClass('has-error');
@@ -442,6 +450,24 @@ jQuery(function ($) {
                                     $(e.target).parents('.question-wrap').removeClass('has-error');
                                 });
                             }
+                        }
+                    }
+                }
+
+                var phones = document.querySelectorAll('.form-valid .phone');
+                for (var i = 0; i < phones.length; i++) {
+                    if ($(phones[i]).val().length > 0 && validatePhone($(phones[i]).val())) {
+                        if($(phones[i]).parents('.question-wrap').is(':visible')){
+                            erroreArrayElemnts.push(phones[i]);
+                        }
+                    }
+                }
+
+                var emails = document.querySelectorAll('.form-valid input[type=email]');
+                for (var i = 0; i < emails.length; i++) {
+                    if ($(emails[i]).val().length > 0 && isEmail($(emails[i]).val())) {
+                        if($(emails[i]).parents('.question-wrap').is(':visible')){
+                            erroreArrayElemnts.push(emails[i]);
                         }
                     }
                 }
@@ -454,18 +480,62 @@ jQuery(function ($) {
                     erroreArrayElemnts.sort(function(a, b){
                         return parseInt($(a).parents('.question-wrap').offset().top) - parseInt($(b).parents('.question-wrap').offset().top)
                     });
-                    console.log($(erroreArrayElemnts[0]));
                     $('.question-list').scrollTo($(erroreArrayElemnts[0]).parents('.question-wrap'), 1000); //custom animation speed 
                 }
             });
         });
+        //validatopn for email
+        $('.pool-wrap').on('change', 'input[type=email]', function(e){
+            let email = $(this).val();
+            let question = $(this).parents('.question-wrap');
+            if(!isEmail(email) && email.length > 0){
+                question.addClass('has-error');
+                if(question.find('.error-text').length === 0){
+                    let errorHtml = '<div class="error-text">Введите корректный email</div>';
+                    question.append($(errorHtml));
+                }
+                $(this).keypress(function(e){
+                    let email = $(this).val();
+                    if(isEmail(email) || email.length === 0){
+                        question.removeClass('has-error');
+                        question.find('.error-text').remove();
+                    }
+                });
+            } else {
+                question.removeClass('has-error');
+                question.find('.error-text').remove();
+            }
+        });
+        //validation for email
         function isEmail(email) {
             var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
             return regex.test(email);
         }
+        //validation for phone
+        $('.pool-wrap').on('change', '.phone-answer input', function(e){
+            let question = $(this).parents('.question-wrap');
+            let phone = question.find('.phone').val();
+            if(phone.length > 0 && !validatePhone(phone)){
+                question.addClass('has-error');
+                if(question.find('.error-text').length === 0){
+                    let errorHtml = '<div class="error-text">Введите корректный номер телефона</div>';
+                    question.append($(errorHtml));
+                    question.on('input', 'input', function(e){
+                        let question = $(this).parents('.question-wrap');
+                        let phone = question.find('.phone').val();
+                        if(validatePhone(phone) || phone.length === 0){
+                            question.removeClass('has-error');
+                            question.find('.error-text').remove();
+                        }
+                    });
+                }
+            } else {
+                question.removeClass('has-error');
+                question.find('.error-text').remove();
+            }
+        });
         function validatePhone(txtPhone) {
-            var filter = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
-            if (filter.test(txtPhone)) {
+            if (txtPhone.length < 11 && txtPhone.length > 7) {
                 return true;
             }
             else {
@@ -477,7 +547,7 @@ jQuery(function ($) {
             return /^-?\+?\d*$/.test(value) && (value === "" || value);
         });
 
-        //crutch for 17 survey
+        //solution for 17 survey
         let surveyId = $('input[name=survey_id]').val();
         if(surveyId == '17'){
             let questions = $('.pool-wrap').find('.question-wrap');
@@ -498,9 +568,3 @@ jQuery(function ($) {
         }
     });
 });
-const appHeight = () => {
-    const doc = document.documentElement
-    doc.style.setProperty('--app-height', `${window.innerHeight}px`)
-}
-window.addEventListener('resize', appHeight)
-appHeight()

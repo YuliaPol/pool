@@ -2334,6 +2334,12 @@ body {
                 color: $errorColor;
             }
         }
+        .error-text {
+            padding-top: 10px;
+            font-size: 14px;
+            line-height: 18px;
+            color: $errorColor;
+        }
         .question-name {
             font-family: $fontPage;
             font-style: normal;
@@ -2444,6 +2450,9 @@ body {
                 color: #000000;
                 text-overflow: ellipsis;
                 overflow: hidden;
+                &:empty {
+                    display: none;
+                }
             }
         }
         .scale-wrap {
@@ -3618,10 +3627,146 @@ $color-stack:
         background-size: contain;
     }
 }
-.datepicker {
+.datepicker,
+.datepicker.dropdown-menu {
     box-shadow: 1px 1px 4px 5px rgba(0, 0, 0, 0.03);
     border-radius: 25px;
     border: none;
+    padding: 0px;
+    z-index: 1000 !important;
+    &::before,
+    &::after {
+        display: none;
+    }
+    .table-condensed {
+        thead {
+            tr {
+                &:nth-child(3){
+                    border-top: 1px solid #F5F5F7;
+                    border-bottom: 1px solid #F5F5F7;
+                    font-family: $fontPage;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 11px;
+                    line-height: 13px;
+                    color: #000000;
+                    vertical-align: middle;
+                    th {
+                        padding: 5px;
+                        height: 23px;
+                    }
+                }
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+                font-family: $fontPage;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 11px;
+                line-height: 13px;
+                color: #000000;
+                vertical-align: middle;
+                padding: 12px;
+                border-radius: 10px;
+                span:hover,
+                span.focused {
+                    background: rgba(127, 161, 248, 0.2);
+                }
+            }
+        }
+        td {
+            &.day,
+            &.month,
+            &.year,
+            &.decade,
+            &.century {
+                font-family: $fontPage;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 11px;
+                line-height: 13px;
+                color: #000000;
+                vertical-align: middle;
+                padding: 12px;
+                border-radius: 10px;
+                &:hover,
+                &.focused,
+                &.active {
+                    background: rgba(127, 161, 248, 0.2);
+                    color: #000000;
+                    &:hover {
+                        background: rgba(127, 161, 248, 0.2);
+                        color: #000000;
+                    }
+                }
+                &.old,
+                &.new {
+                    color: #777777;
+                }
+                &.today {
+                    font-weight: bold;
+                    color: #7FA1F8;
+                    background: transparent;
+                    &:hover {
+                        background: rgba(127, 161, 248, 0.2);
+                    }
+                }
+            }
+        }
+    }
+    .datepicker-switch,
+    .prev,
+    .next {
+        font-family: $fontPage;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+        color: #000000;
+        vertical-align: middle;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 10px;
+        &:hover {
+            background: rgba(127, 161, 248, 0.2);
+        }
+    }
+    .prev {
+        color: transparent;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            background: url(./../img/arrow-back.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 5px;
+        }
+    }
+    .next {
+        color: transparent;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            background: url(./../img/arrow-back.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 5px;
+            transform: rotate(180deg);
+        }
+    }
     .datepicker--pointer {
         display: none;
     }
