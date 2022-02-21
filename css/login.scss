@@ -84,7 +84,8 @@ body {
         color: $fontColor;
         padding-bottom: 20px;
     }
-    .btn-submit {
+    .btn-submit,
+    .btn-next {
         width: 100%;
         max-width: 345px;
         background: linear-gradient(90deg, $bgColor2 0%, $bgColor1 35%,  #C4C4C4 70%, #C4C4C4 100%);
@@ -150,7 +151,10 @@ body {
             img {
                 // max-width: 100%;  
                 width: 100%;
-                max-width: 468px;         
+                max-width: 468px;
+                max-height: 100%;
+                object-fit: contain;
+                object-position: center;  
             }
         }
         .detail-form-text-cont {
@@ -280,9 +284,16 @@ body {
                         color: $fontColor;
                     }
                 }
+                &.customselect-wrapper {
+                    max-width: 345px;
+                    .select-styled {
+                        box-shadow: none;
+                        border: 1px solid #C4C4C4;
+                    }
+                }
                 .error-text {
                     padding-top: 5px;
-                    font-size: 12pz;
+                    font-size: 12px;
                     line-height: 14px;
                     font-family: $fontPage;
                     color: $errorColor;
@@ -362,6 +373,25 @@ body {
                         background-size: contain;
                     }
                 }
+            }
+        }
+    }
+    .thanks-wrap {
+        .agreement-form {
+            height: 520px;
+            max-height: 60vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-direction: column;
+            .btn-cont {
+                width: 100%;
+            }
+            .login-header {
+                padding-bottom: 40px;
+            }
+            .under-header {
+                padding-bottom: 40px;
             }
         }
     }
@@ -617,8 +647,34 @@ body {
                 .under-header {
                     max-width: none;
                 }
-                .btn-submit {
+                .btn-submit,
+                .btn-next {
                     max-width: none;
+                }
+            }
+        }
+        .thanks-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            .img-cont {
+                display: block;
+                position: relative;
+                height: 50vh;
+                width: 100%;
+                img {
+                    max-height: 100%;
+                    object-fit: contain;
+                    object-position: center;
+                }
+            }
+            .agreement-form {
+                height: auto;
+                max-height: initial;
+                .login-header,
+                .under-header {
+                    padding-bottom: 20px;
                 }
             }
         }
@@ -631,7 +687,8 @@ body {
                 max-width: 80px;
             }
         }
-        .btn-submit {
+        .btn-submit,
+        .btn-next {
             padding: 15px;
             max-width: 100%;
         }
