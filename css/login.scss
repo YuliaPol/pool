@@ -42,7 +42,11 @@ table {
     border-spacing: 0; }
 * {
     box-sizing: border-box;
+    &::-webkit-scrollbar {
+        width: 0px;
+    }
 }
+
 html,body {
     height:100%;
 }
@@ -297,7 +301,7 @@ body {
             .btns-cont {
                 padding-top: 30px;
             }
-            .btn-enter-google {
+            .btn-enter-social {
                 background: #FFFFFF;
                 border: 1px solid #C4C4C4;
                 box-sizing: border-box;
@@ -322,14 +326,40 @@ body {
                         content: "";
                         width: 41px;
                         height: 41px;
-                        background: url(./../img/logo-google.svg);
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-size: contain;
                         display: inline-block;
                         position: absolute;
                         top: -12px;
                         left: 0px;
+                    }
+                }
+            }
+            .btn-enter-google {
+                span {
+                    &::before {
+                        background: url(./../img/logo-google.svg);
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                    }
+                }
+            }
+            .btn-enter-vk {
+                span {
+                    &::before {
+                        background: url(./../img/logo-vk.svg);
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                    }
+                }
+            }
+            .btn-enter-facebook {
+                span {
+                    &::before {
+                        background: url(./../img//logo-facebook.svg);
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
                     }
                 }
             }
@@ -497,6 +527,10 @@ body {
             padding: 30px 50px;
             height: 90px;
         }
+        .login-header {
+            font-size: 38px;
+            line-height: 44px;
+        }
         .interests-content {
             padding-left: 50px;
             padding-right: 50px;
@@ -531,6 +565,10 @@ body {
 }
 @media screen and (max-width: 768px) {
     .login-page {
+        .login-header {
+            font-size: 28px;
+            line-height: 34px;
+        }
         .header {
             padding: 30px 30px;
             height: 70px;
@@ -658,7 +696,7 @@ body {
                 .btns-cont {
                     padding-top: 20px;
                 }
-                .btn-enter-google {
+                .btn-enter-social {
                     padding: 15px;
                     max-width: 100%;
                     span {

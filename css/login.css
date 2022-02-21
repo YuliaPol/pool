@@ -44,6 +44,10 @@ table {
           box-sizing: border-box;
 }
 
+*::-webkit-scrollbar {
+  width: 0px;
+}
+
 html, body {
   height: 100%;
 }
@@ -439,8 +443,8 @@ body {
   padding-top: 30px;
 }
 
-.login-page .login-content .login-form .btn-enter-google,
-.login-page .login-content .agreement-form .btn-enter-google {
+.login-page .login-content .login-form .btn-enter-social,
+.login-page .login-content .agreement-form .btn-enter-social {
   background: #FFFFFF;
   border: 1px solid #C4C4C4;
   -webkit-box-sizing: border-box;
@@ -461,26 +465,48 @@ body {
   display: block;
 }
 
-.login-page .login-content .login-form .btn-enter-google span,
-.login-page .login-content .agreement-form .btn-enter-google span {
+.login-page .login-content .login-form .btn-enter-social span,
+.login-page .login-content .agreement-form .btn-enter-social span {
   padding-left: 55px;
   position: relative;
 }
 
-.login-page .login-content .login-form .btn-enter-google span::before,
-.login-page .login-content .agreement-form .btn-enter-google span::before {
+.login-page .login-content .login-form .btn-enter-social span::before,
+.login-page .login-content .agreement-form .btn-enter-social span::before {
   content: "";
   width: 41px;
   height: 41px;
+  display: inline-block;
+  position: absolute;
+  top: -12px;
+  left: 0px;
+}
+
+.login-page .login-content .login-form .btn-enter-google span::before,
+.login-page .login-content .agreement-form .btn-enter-google span::before {
   background: url(./../img/logo-google.svg);
   background-position: center;
   background-repeat: no-repeat;
   -webkit-background-size: contain;
           background-size: contain;
-  display: inline-block;
-  position: absolute;
-  top: -12px;
-  left: 0px;
+}
+
+.login-page .login-content .login-form .btn-enter-vk span::before,
+.login-page .login-content .agreement-form .btn-enter-vk span::before {
+  background: url(./../img/logo-vk.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+}
+
+.login-page .login-content .login-form .btn-enter-facebook span::before,
+.login-page .login-content .agreement-form .btn-enter-facebook span::before {
+  background: url(./../img//logo-facebook.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
 }
 
 .login-page .interests-content {
@@ -704,6 +730,10 @@ body {
     padding: 30px 50px;
     height: 90px;
   }
+  .login-page .login-header {
+    font-size: 38px;
+    line-height: 44px;
+  }
   .login-page .interests-content {
     padding-left: 50px;
     padding-right: 50px;
@@ -736,6 +766,10 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .login-page .login-header {
+    font-size: 28px;
+    line-height: 34px;
+  }
   .login-page .header {
     padding: 30px 30px;
     height: 70px;
@@ -868,17 +902,17 @@ body {
   .login-page .login-content .agreement-form .btns-cont {
     padding-top: 20px;
   }
-  .login-page .login-content .login-form .btn-enter-google,
-  .login-page .login-content .agreement-form .btn-enter-google {
+  .login-page .login-content .login-form .btn-enter-social,
+  .login-page .login-content .agreement-form .btn-enter-social {
     padding: 15px;
     max-width: 100%;
   }
-  .login-page .login-content .login-form .btn-enter-google span,
-  .login-page .login-content .agreement-form .btn-enter-google span {
+  .login-page .login-content .login-form .btn-enter-social span,
+  .login-page .login-content .agreement-form .btn-enter-social span {
     padding-left: 45px;
   }
-  .login-page .login-content .login-form .btn-enter-google span::before,
-  .login-page .login-content .agreement-form .btn-enter-google span::before {
+  .login-page .login-content .login-form .btn-enter-social span::before,
+  .login-page .login-content .agreement-form .btn-enter-social span::before {
     width: 33px;
     height: 33px;
     top: -9px;
